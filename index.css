@@ -3607,10 +3607,10 @@ header.main .fork_me a:hover rect {
 }
 
 html {
-  background: #F0F3F7;
+  background: #ffffff;
 }
 html #app {
-  background: #F0F3F7;
+  background: #ffffff;
 }
 
 /* styles that apply to stuff around search box on multiple pages */
