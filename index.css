@@ -447,12 +447,12 @@
 }
 @font-face {
   font-family: 'code-gov';
-  src: url(/caribou/fonts/code-gov.eot);
-  src: url(/caribou/fonts/code-gov.eot#iefix) format('embedded-opentype'),
-  url(/caribou/fonts/code-gov.woff2) format('woff2'),
-  url(/caribou/fonts/code-gov.woff) format('woff'),
-  url(/caribou/fonts/code-gov.ttf) format('truetype'),
-  url(/caribou/fonts/code-gov.svg#code-gov) format('svg');
+  src: url(/code-gov-front-end/fonts/code-gov.eot);
+  src: url(/code-gov-front-end/fonts/code-gov.eot#iefix) format('embedded-opentype'),
+  url(/code-gov-front-end/fonts/code-gov.woff2) format('woff2'),
+  url(/code-gov-front-end/fonts/code-gov.woff) format('woff'),
+  url(/code-gov-front-end/fonts/code-gov.ttf) format('truetype'),
+  url(/code-gov-front-end/fonts/code-gov.svg#code-gov) format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -465,7 +465,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'code-gov';
-    src: url('../font/code-gov.svg?94232063#code-gov') format('svg');
+    src: url('../font/code-gov.svg?23948069#code-gov') format('svg');
   }
 }
 */
@@ -497,11 +497,6 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-.icon-close:before {
-  content: "\1";
-}
-
-/* '' */
 .icon-search:before {
   content: "\E800";
 }
@@ -562,6 +557,11 @@
 }
 
 /* '' */
+.icon-close:before {
+  content: "\E80D";
+}
+
+/* '' */
 .icon-twitter:before {
   content: "\F099";
 }
@@ -879,6 +879,43 @@ html body ul {
     color: #00847f;
   }
 }
+.autocomplete {
+  background-color: #ffffff;
+  border: 1px solid #307ac4;
+  display: block;
+  margin-top: 0.25em;
+  position: absolute;
+  text-align: left;
+  width: 100%;
+  z-index: 1000;
+}
+.autocomplete li {
+  padding: 0px;
+}
+.autocomplete li a {
+  cursor: pointer;
+  display: block;
+  padding: 10px;
+  padding-left: 20px;
+  text-decoration: none;
+}
+.autocomplete li a:hover {
+  background-color: #7baddf;
+}
+.autocomplete li a .icon {
+  color: #0071bc;
+  max-width: 50px;
+}
+.autocomplete li a span {
+  color: black;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: calc(100% - 50px);
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
 .banner {
   background: url("/code-gov-style/assets/img/american_flag_1920x1280_gradient.jpg");
   background-attachment: fixed;
@@ -1301,13 +1338,28 @@ button:only-child {
   background-color: #33CC66;
   background: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%22500%22%20width%3D%22500%22%3E%0A%20%20%3Cpolygon%20points%3D%220%2C0%20500%2C0%20500%2C500%200%2C0%22%20fill%3D%22%2333CC66%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E");
 }
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .card .corner-tag.high {
+    background: url("/code-gov-style/assets/img/corner-tags/high.svg");
+  }
+}
 .card .corner-tag.medium {
   background-color: #FF9933;
   background: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%22500%22%20width%3D%22500%22%3E%0A%20%20%3Cpolygon%20points%3D%220%2C0%20500%2C0%20500%2C500%200%2C0%22%20fill%3D%22%23FF9933%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E");
 }
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .card .corner-tag.medium {
+    background: url("/code-gov-style/assets/img/corner-tags/medium.svg");
+  }
+}
 .card .corner-tag.low {
   background-color: #F00;
   background: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%22500%22%20width%3D%22500%22%3E%0A%20%20%3Cpolygon%20points%3D%220%2C0%20500%2C0%20500%2C500%200%2C0%22%20fill%3D%22%23F00%22%3E%3C%2Fpolygon%3E%0A%3C%2Fsvg%3E");
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .card .corner-tag.low {
+    background: url("/code-gov-style/assets/img/corner-tags/low.svg");
+  }
 }
 .card .corner-tag .corner-tag-value {
   display: inline-block;
@@ -1853,7 +1905,7 @@ filter-box .filter-box ul.options li .showLess {
   transform: translateY(-50%);
 }
 .filter-tag .filter-tag-title::before {
-  content: "\1";
+  content: "\E80D";
   font-family: "code-gov";
   font-size: 1.3em;
   margin-left: -30px;
@@ -1892,7 +1944,7 @@ filter-box .filter-box ul.options li .showLess {
 }
 
 .icon-close:before {
-  content: "\1";
+  content: "\E80D";
 }
 
 /* '' */
@@ -2430,9 +2482,15 @@ input + button.go:hover {
 
 [type=checkbox]:checked + label::before,
 [type=checkbox]:checked:disabled + label::before {
-  background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%20216%20146%22%3E%3Cpath%20fill=%22%23000%22%20d=%22M168.86%2037.966l-11.08-11.08c-1.52-1.52-3.367-2.28-5.54-2.28-2.172%200-4.02.76-5.54%202.28L93.254%2080.414%2069.3%2056.38c-1.52-1.522-3.367-2.282-5.54-2.282-2.172%200-4.02.76-5.54%202.28L47.14%2067.46c-1.52%201.522-2.28%203.37-2.28%205.542%200%202.172.76%204.02%202.28%205.54l29.493%2029.493%2011.08%2011.08c1.52%201.52%203.368%202.28%205.54%202.28%202.173%200%204.02-.76%205.54-2.28l11.082-11.08L168.86%2049.05c1.52-1.52%202.283-3.37%202.283-5.54%200-2.174-.76-4.02-2.28-5.54z%22/%3E%3C/svg%3E");
+  background: url("data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2220%22%20height=%2220%22%20viewBox=%220%200%20216%20146%22%3E%3Cpath%20fill=%22%23000%22%20d=%22M168.86%2037.966l-11.08-11.08c-1.52-1.52-3.367-2.28-5.54-2.28-2.172%200-4.02.76-5.54%202.28L93.254%2080.414%2069.3%2056.38c-1.52-1.522-3.367-2.282-5.54-2.282-2.172%200-4.02.76-5.54%202.28L47.14%2067.46c-1.52%201.522-2.28%203.37-2.28%205.542%200%202.172.76%204.02%202.28%205.54l29.493%2029.493%2011.08%2011.08c1.52%201.52%203.368%202.28%205.54%202.28%202.173%200%204.02-.76%205.54-2.28l11.082-11.08L168.86%2049.05c1.52-1.52%202.283-3.37%202.283-5.54%200-2.174-.76-4.02-2.28-5.54z%22/%3E%3C/svg%3E");
   background-position: 50%;
   background-repeat: no-repeat;
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  [type=checkbox]:checked + label::before,
+[type=checkbox]:checked:disabled + label::before {
+    background: #0071bc;
+  }
 }
 
 [type=checkbox]:disabled + label {
@@ -2752,13 +2810,18 @@ mobile-menu-button.dark .icon {
   font-weight: bold;
   margin-bottom: 2px;
 }
+@media screen and (min-width: 1100px) and (min-width: 801px) {
+  .popper:hover .popover.desktop {
+    display: block;
+  }
+}
 @media (min-width: 801px) {
-  .popper:hover .popover.desktop, .popper.activated .popover.desktop {
+  .popper.activated .popover.desktop {
     display: block;
   }
 }
 @media (max-width: 801px) {
-  .popper:hover .popover.mobile, .popper.activated .popover.mobile {
+  .popper.activated .popover.mobile {
     display: block;
   }
 }
@@ -2868,9 +2931,11 @@ blockquote p:last-child {
   color: #ffffff;
   font-size: 3em;
   height: 3rem;
+  left: 50%;
   overflow: hidden;
   padding-top: 1rem;
   position: absolute;
+  transform: translateX(-50%);
   text-decoration: none;
   width: 100%;
 }
@@ -3599,6 +3664,15 @@ h3 {
   border-top: 1px solid #aeb0b5;
   margin-bottom: 2rem;
 }
+.search-results-header .width-quarter {
+  position: relative;
+}
+.search-results-header .width-quarter .search-form {
+  margin-bottom: 0;
+}
+.search-results-header .width-quarter .autocomplete {
+  width: calc(100% - 10px);
+}
 .search-results-header h3 {
   display: inline-block;
 }
@@ -4131,7 +4205,6 @@ header.main nav ul li a svg {
 @media screen and (min-width: 481px) {
   .search-box .search-form {
     display: block;
-    float: right;
   }
 }
 .search-box .search-form input[type=search] {
@@ -4141,6 +4214,9 @@ header.main nav ul li a svg {
   .search-box .search-form {
     width: 36rem;
   }
+}
+.search-box .autocomplete {
+  width: calc(100% - 42px - 10px);
 }
 
 .repo-general h2 {
@@ -4290,6 +4366,7 @@ header.main nav ul li a svg {
 }
 .search-input-wrapper .search-input-and-button-wrapper {
   margin: 0 auto;
+  position: relative;
   text-align: left;
   width: 100%;
 }
@@ -4303,6 +4380,9 @@ header.main nav ul li a svg {
   height: 40px;
   margin-right: 0;
   position: absolute;
+}
+.search-input-wrapper .search-input-and-button-wrapper .autocomplete {
+  width: calc(100% - 10px);
 }
 .search-input-wrapper .icon-search {
   color: #000000;
@@ -4623,4 +4703,8 @@ header.main nav ul li a svg {
 .roadmap-general .roadmap-disclaimer {
   margin-top: 3rem;
   margin-bottom: 3rem;
+}
+
+ul.breadcrumbs li {
+  margin-right: 5px;
 }
