@@ -20,6 +20,9 @@ coverage
 # nyc test coverage
 .nyc_output
 
+# sonar qube
+test-report.xml
+
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 
@@ -72,3 +75,7 @@ typings/
 
 # code.gov plugins
 /src/components/plugins
+
+# sonar qube
+test-report.xml
+.scannerwork

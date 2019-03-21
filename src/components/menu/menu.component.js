@@ -1,11 +1,10 @@
 /* global PUBLIC_PATH */
 
 import React, { Component, Fragment } from 'react'
-import CustomLink from 'components/custom-link'
-import PropTypes from 'prop-types'
-import { PrimaryMenuOption, SecondaryDropdown, SearchBoxDropDown } from './subcomponents'
+import { PrimaryMenuOption, SecondaryDropdown, SearchBoxDropDown, OfficialBanner } from './subcomponents'
 import MobileMenuControl from 'components/mobile-menu-control'
 import { map } from '@code.gov/cautious'
+import { Link } from "react-router-dom";
 
 export default class Menu extends Component {
   /*
@@ -41,7 +40,7 @@ export default class Menu extends Component {
     })
   }
 
-  onClickMenuOption(selected, event) {
+  onClickMenuOption = (selected, event) => {
 
     const menu = this.state.menu.map(menuOption => {
       if (menuOption !== selected) {
@@ -72,7 +71,7 @@ export default class Menu extends Component {
     ));
   }
 
-  collapse() {
+  collapse = () => {
     const menu = this.state.menu.map(menuOption => {
         menuOption.expanded = false
         return menuOption
@@ -88,42 +87,41 @@ export default class Menu extends Component {
   render() {
 
     const { color, onHomePage, siteTitle, toggleSearchDropdown } = this.props
+    let headerClassName = `main menu-background`
+    if (onHomePage) headerClassName += ' '
 
-    let headerClassName = `main ${color}`
-    if (onHomePage) headerClassName += ' transparent'
-
-    let navClassName = `main ${color}`
+    let navClassName = `main menu-background`
     if (this.state.expanded) navClassName += ' expanded'
     if (this.state.notAtTop) navClassName += ' not-at-top'
 
     let navStyle = { 'height': this.state.height }
-
     return (
       <header className={headerClassName} ref={this.header}>
         <nav className={navClassName} style={navStyle} aria-label="primary">
 
           <MobileMenuControl />
-
-          <CustomLink to="/" className="svg-container" title={siteTitle + ' Home'}>
-            <img src={color === 'white' ? this.props.logoDark : this.props.logoLight} alt="code.gov"/>
-          </CustomLink>
-
-          <ul role="menubar" aria-label="primary">
+          <OfficialBanner bannerOptions={this.props.officialBanner} />
+          <div className="indented">
+            <Link to="/home" className="svg-container" title={siteTitle + ' Home'}>
+              <img className="home-logo" src={this.props.logoLight} alt="code.ca.gov"/>
+            </Link>
+          </div>
+          <ul className="nav-menu" role="menubar" aria-label="primary">
             {map(this.props.menu, menuOption => {
               return (
-                <li className={(menuOption.expanded ? 'expanded' : '')} key={menuOption.name} role="none">
-                  <PrimaryMenuOption menuOption={menuOption} onClick={::this.onClickMenuOption}/>
-                  <SecondaryDropdown menuOption={menuOption} onClick={::this.collapse}/>
+                <li className={(menuOption.expanded ? 'expanded' : '') } key={menuOption.name} role="none">
+                  <PrimaryMenuOption menuOption={menuOption} onClick={this.onClickMenuOption}/>
+                  <SecondaryDropdown menuOption={menuOption} onClick={this.collapse}/>
                 </li>
               )
             })}
           </ul>
           {onHomePage === false && <ul className="right show-w-gt-800">
-            <li>
+            <div className="header-buttons">
               <a className="no-underline" onClick={toggleSearchDropdown}>
                 <i className="icon icon-search"></i>
               </a>
-            </li>
+            </div>
           </ul> }
         </nav>
         {onHomePage === false && <SearchBoxDropDown /> }

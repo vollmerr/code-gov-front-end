@@ -5,13 +5,13 @@ import SearchBoxDropDownComponent from './search-box-dropdown.component'
 import updateSearchParams from 'actions/update-search-params'
 import { getSection } from 'utils/url-parsing'
 
-export const mapStateToProps = ({ searchDropdown }) => {
+const mapStateToProps = ({ searchDropdown }) => {
   return {
     searchDropdown
   }
 }
 
-export const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch => {
   return {
     hideSearchDropdown: () => dispatch(hideSearchDropdown()),
     onSubmit: query => {
@@ -24,7 +24,7 @@ export const mapDispatchToProps = dispatch => {
           size: 10,
           sort: 'best_match'
         }))
-        dispatch(push(`/search?page=1&query=${query}&size=10&sort=best_match`))
+        dispatch(push(`/search?page=1&query=${query}&size=1000&sort=best_match`))
       }
       dispatch(hideSearchDropdown())
     }

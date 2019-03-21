@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`containers - QuickSearchBox mapStateToProps should return the correct properties 1`] = `
-Object {
-  "query": "test-search-query",
-}
-`

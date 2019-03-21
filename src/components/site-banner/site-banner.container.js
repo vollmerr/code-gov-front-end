@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import SiteBannerComponent from './site-banner.component'
 import { getConfigValue } from 'utils/other'
 
-export const mapStateToProps = () => {
+const mapStateToProps = () => {
   return {
     backgroundImage: getConfigValue('images.background')
   }

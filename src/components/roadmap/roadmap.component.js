@@ -4,7 +4,7 @@ import SiteBanner from 'components/site-banner'
 import { normalize, refreshView } from 'utils/other'
 import { map } from '@code.gov/cautious'
 
-export const Row = ({ todo }) => {
+const Row = ({ todo }) => {
   let iconClass = 'icon'
   let status = normalize(todo.status)
   if (status === 'released') {
@@ -22,7 +22,7 @@ export const Row = ({ todo }) => {
   )
 }
 
-export const Column = ({ phase, todos }) => {
+const Column = ({ phase, todos }) => {
   return (
     <div className="width-third">
       <table>

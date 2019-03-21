@@ -10,7 +10,6 @@ export default class FilterBoxes extends React.Component {
   }
 
   render() {
-    console.log("starting filterboxes with", this.props)
     if (this.props.boxes && this.props.config) {
 
       // filter by whether have filter options from server

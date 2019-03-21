@@ -2,11 +2,11 @@ import { connect } from 'react-redux'
 import ProjectPageComponent from './project-page.component'
 import loadProject from 'actions/load-project'
 
-export const mapStateToProps = ({ project }) => {
+const mapStateToProps = ({ project }) => {
   return { repo: project }
 }
 
-export const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch => {
   return {
     updateProject: repoID => {
       dispatch(loadProject(repoID))

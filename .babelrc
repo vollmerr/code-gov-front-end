@@ -4,13 +4,10 @@
       "@babel/preset-react"
     ],
     "plugins": [
-      "@babel/plugin-proposal-class-properties",
-      "@babel/plugin-proposal-object-rest-spread",
-      "@babel/plugin-transform-arrow-functions",
-      "@babel/plugin-transform-classes",
       "@babel/plugin-syntax-dynamic-import",
-      "dynamic-import-node",
-      "transform-function-bind",
-      "@babel/plugin-transform-regenerator"
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-proposal-export-namespace-from",
+      "@babel/plugin-proposal-throw-expressions",
+      "transform-function-bind"
     ]
   }

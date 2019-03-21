@@ -6,7 +6,7 @@ import collapseAllMobileMenuOptions from 'actions/collapse-all-mobile-menu-optio
 import updateSearchParams from 'actions/update-search-params'
 import { getSection } from 'utils/url-parsing'
 
-export const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch => {
   return {
     onSubmit: query => {
       dispatch(updateSearchParams({
@@ -15,7 +15,7 @@ export const mapDispatchToProps = dispatch => {
         query
       }))
       if (getSection() !== 'search') {
-        dispatch(push(`/search?page=1&query=${query}&size=10&sort=best_match`))
+        dispatch(push(`/search?page=1&query=${query}&size=1000&sort=best_match`))
       }
       dispatch(collapseAllMobileMenuOptions())
       dispatch(hideMobileMenu())

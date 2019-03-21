@@ -12,16 +12,13 @@ import updateSearchParams from 'actions/update-search-params'
 import updateTaskParams from 'actions/update-task-params'
 import history from 'browser-history'
 
-export const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     updateStore: to => {
-      console.log("starting updateStore with to", to)
       // this basically intercepts user clicks on links
       // and updates the redux store based on them
       const search = getSearchFromUrl(to)
-      console.log("search:", search)
       const params = getNormalizedURLSearchParams(search)
-      console.log("params:", params)
       if (to.startsWith('/browse')) {
         const result = {
           page: params.page || defaultState.browseParams.page,

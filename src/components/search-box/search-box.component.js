@@ -30,7 +30,7 @@ export default class SearchBox extends Component {
     }
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
     const value = event.target.value
     this.setState({value});
     if (this.props.onChange) {
@@ -38,19 +38,20 @@ export default class SearchBox extends Component {
     }
   }
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     this.props.onSubmit(this.state.value)
     event.preventDefault()
   }
 
   render() {
     return (
-      <form className="search-form" onSubmit={::this.handleSubmit}>
+      <form className="search-form" onSubmit={this.handleSubmit}>
         <div className="search-input-wrapper">
           <div className="search-input-and-button-wrapper">
             <input
-              onChange={::this.handleChange}
-              placeholder={this.props.placeholder || 'Search Projects...'}
+              aria-label="Search through projects"
+              onChange={this.handleChange}
+              placeholder={this.props.placeholder}
               ref={this.textInput}
               type={this.props.inputType || 'search'}
               value={this.state.value}

@@ -27,11 +27,13 @@ html {
 @import './home.scss';
 @import './home-about.scss';
 @import './home-banner.scss';
-@import './home-press.scss';
+@import './home-project-board.scss';
+@import './home-partners.scss';
+@import './home-connect.scss';
 
 
 @import './menu.scss';
-
+@import './official-banner.scss';
 @import './project-page.scss';
 
 @import './privacy-policy.scss';
@@ -40,6 +42,7 @@ html {
 
 @import './repo-card.scss';
 @import './repo-list.scss';
+@import './footer.scss';
 
 @import './roadmap.scss';
 
@@ -49,17 +52,5 @@ html {
 ul.breadcrumbs {
   li {
     margin-right: 5px;
-  }
-}
-
-// pads footnotes
-[id*=fn] {
-  @media screen and (max-width: $header-switch) {
-    margin-top: -60px;
-    padding-top: 60px;
-  }
-  @media screen and (min-width: $header-switch) {
-    margin-top: -90px; /* Size of fixed header */
-    padding-top: 90px;
   }
 }

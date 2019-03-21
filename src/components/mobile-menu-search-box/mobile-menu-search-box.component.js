@@ -7,11 +7,11 @@ export default class MobileMenuSearchBoxComponent extends React.Component {
     this.state = { value: '' };
   }
 
-  handleChange(event) {
+  handleChange = event => {
     this.setState({value: event.target.value});
   }
 
-  handleSubmit(event) {
+  handleSubmit = event => {
     this.props.onSubmit(this.state.value)
     event.preventDefault()
     this.setState({ value: ''})
@@ -19,9 +19,10 @@ export default class MobileMenuSearchBoxComponent extends React.Component {
 
   render() {
     return (
-      <form className="search-form" onSubmit={::this.handleSubmit}>
+      <form className="search-form" onSubmit={this.handleSubmit} aria-label="Search through projects">
         <input
-          onChange={::this.handleChange}
+          aria-label="Search through projects"
+          onChange={this.handleChange}
           placeholder='Search Projects...'
           type='search'
           value={this.state.value}

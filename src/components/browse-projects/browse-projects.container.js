@@ -10,16 +10,15 @@ import saveFilterOptions from 'actions/save-filter-options'
 import updateBrowseFilters from 'actions/update-browse-filters'
 import updateBrowseParams from 'actions/update-browse-params'
 import BrowseProjectsComponent from './browse-projects.component'
+import { sortByBestMatch, sortByDataQuality, sortByDate, sortByName } from 'utils/repo-sorting'
 
-export const mapStateToProps = ({ browseParams, browseResults, filters }) => {
-
+const mapStateToProps = ({ browseParams, browseResults, filters }) => {
   const categories = ['agencies', 'languages', 'licenses', 'usageTypes']
 
   const selections = categories.reduce((accumulator, key) => {
     accumulator[key] = getFilterValuesFromParamsByCategory(browseParams, key)
     return accumulator
   }, {})
-  //console.log("selections:", selections)
 
   const selectedSorting = browseParams.sort
   const selectedPage = browseParams.page
@@ -51,8 +50,8 @@ export const mapStateToProps = ({ browseParams, browseResults, filters }) => {
     },
     {
       label: 'Last Updated',
-      value: 'last_updated',
-      selected: selectedSorting === 'last_updated'
+      value: 'last_update',
+      selected: selectedSorting === 'last_update'
     }
   ]
 
@@ -71,11 +70,10 @@ export const mapStateToProps = ({ browseParams, browseResults, filters }) => {
     total
   }
 
-  //console.log("browse-projects's container passing following to component:", result)
   return result
 }
 
-export const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch => {
   return {
     onFilterBoxChange: (category, change) => {
       dispatch(updateBrowseFilters(category, change.value, change.type))

@@ -6,7 +6,7 @@ import { getConfigValue } from 'utils/other'
 import { getSection } from 'utils/url-parsing'
 
 
-export const mapStateToProps = ({ query }) => {
+const mapStateToProps = ({ query }) => {
   return {
     placeholder: getConfigValue('content.home.banner.search_placeholder_text'),
     searchDescriptionText: getConfigValue('content.home.banner.search_description_text'),
@@ -15,7 +15,7 @@ export const mapStateToProps = ({ query }) => {
   }
 }
 
-export const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch => {
   return {
     onSubmit: (query) => {
       console.log("home-banner-search-box.container starting onSubmit with query:", query)
@@ -23,7 +23,7 @@ export const mapDispatchToProps = dispatch => {
         dispatch(updateSearchParams({ page: 1, query, size: 10 }))
       } else {
         dispatch(updateSearchParams({ page: 1, query, size: 10, sort: 'best_match' }))
-        dispatch(push(`/search?page=1&query=${query}&size=10&sort=best_match`))
+        dispatch(push(`/search?page=1&query=${query}&size=1000&sort=best_match`))
       }
     }
   }

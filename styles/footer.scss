@@ -1,0 +1,40 @@
+.footer {
+    background-color: #205493;
+    .footer-content{
+        padding-top: 50px;
+
+        .icon-link {
+            color:white !important;
+            background-color: #205493;
+            padding-bottom: 20px;
+            padding-top: 20px;
+        }
+            
+        .fa {
+            font-size: 150%;
+            margin-left: 10px;
+            margin-right: 10px;
+        }   
+            
+        .icon-row {
+            text-align: center;
+            background-color: #205493;
+            padding-bottom: 40px;
+            width: 100%;
+        }
+
+        .foot-img {
+            max-width: 150px;
+            display: block !important; 
+            margin: auto;
+        }
+
+        .separator {
+            border-bottom: 1px solid white; 
+            width: 60%;
+            margin: auto;
+            margin-bottom: 15px;
+            margin-top: 10px;
+        }
+    }
+}

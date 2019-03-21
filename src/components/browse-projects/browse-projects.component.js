@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Breadcrumbs from 'components/breadcrumbs'
 import FilterBoxes from 'components/filter-boxes'
 import FilterTags from 'components/filter-tags'
@@ -8,10 +8,8 @@ import QuickSearchBox from 'components/quick-search-box'
 import SiteBanner from 'components/site-banner'
 import SortSection from 'components/sort-section'
 import RepoCard from 'components/repo-card'
-import { isChecked } from 'utils/filtering'
 import { refreshView, scrollToTopOfResults } from 'utils/other'
-import { parseLocation } from 'utils/url-parsing'
-import { length, some } from '@code.gov/cautious'
+import { some } from '@code.gov/cautious'
 
 
 export default class BrowseProjects extends React.Component {
@@ -31,7 +29,7 @@ export default class BrowseProjects extends React.Component {
     } else if (total >= 2) {
       textContent = `${total} Repositories`
     } else {
-      textContent = 'Loading Repositories'
+      textContent = 'No Repositories'
     }
     return <h3 className="repos-count width-three-quarters">{textContent}</h3>
   }
@@ -54,12 +52,12 @@ export default class BrowseProjects extends React.Component {
     }
   }
 
-  onFilterBoxChange(category, values) {
+  onFilterBoxChange = (category, values) => {
     scrollToTopOfResults()
     this.props.onFilterBoxChange(category, values)
   }
 
-  updatePage(newPage) {
+  updatePage = (newPage) => {
     scrollToTopOfResults()
     this.props.updatePage(newPage)
   }
@@ -75,7 +73,7 @@ export default class BrowseProjects extends React.Component {
         ]}/>
         <div className="search-results-header">
             <div className="indented">
-              <div className="width-quarter">
+              <div className="width-quarter"> 
                 <QuickSearchBox />
               </div>
               {this.repoCounter}
@@ -89,11 +87,11 @@ export default class BrowseProjects extends React.Component {
               boxes={this.props.boxes}
               config={[
                 ['Language', 'languages'],
-                ['Federal Agency', 'agencies'],
+                ['State Agency', 'agencies'],
                 ['Licenses', 'licenses'],
                 ['Usage Types', 'usageTypes']
                 ]}
-              onFilterBoxChange={::this.onFilterBoxChange}
+              onFilterBoxChange={this.onFilterBoxChange}
             />
 
           </div>
@@ -102,10 +100,10 @@ export default class BrowseProjects extends React.Component {
               options={this.props.sortOptions}
               onSortChange={this.props.onSortChange}
             />
-            <FilterTags filters={this.props.filterTags} onClick={::this.props.onFilterTagClick} />
+            <FilterTags filters={this.props.filterTags} onClick={this.props.onFilterTagClick} />
             <div className="card-list">
               {this.reposContainer}
-              {numPages > 0 && <Pagination count={this.props.total} pagesize={this.props.selectedPageSize} page={this.props.selectedPage} updatePage={::this.updatePage} />}
+              {numPages > 0 && <Pagination count={this.props.total} pagesize={this.props.selectedPageSize} page={this.props.selectedPage} updatePage={this.updatePage} />}
             </div>
           </div>
         </div>
