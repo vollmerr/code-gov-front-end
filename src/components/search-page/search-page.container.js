@@ -41,28 +41,24 @@ export const mapStateToProps = ({ filters, searchParams, searchResults, selected
     const query = searchParams.query
     const selectedPage = searchParams.page
     const selectedPageSize = searchParams.size
-    const selectedSorting = searchParams.sort
+    let selectedSorting = searchParams.sort
 
     let boxes = {}
     if (filters) {
       boxes = categories.reduce((accumulator, key) => {
-        accumulator[key] = filters[key]
-        .filter(({name, value}) => {
-          if (optionsinResults && optionsinResults[key]) {
-            return optionsinResults[key].has(normalize(value))
-          } else {
-            return false
-          }
-        })
-        .map(({ name, value}) => {
+        accumulator[key] = filters[key].map(({ name, value}) => {
           return { name, value, checked: includes(selections[key], normalize(value)) }
         })
         return accumulator
       }, {})
     }
 
-    let total = 0
+    // only show best_match if there is a query
+    if(!query && selectedSorting === 'best_match'){
+      selectedSorting = 'data_quality';
+    }
 
+    let total = 0
     let filteredResults
     if (searchResults) {
 
@@ -118,9 +114,11 @@ export const mapStateToProps = ({ filters, searchParams, searchResults, selected
         return false
       })
 
-      total = len(filteredResults)
-
-      filteredResults = filteredResults.slice((selectedPage-1) * selectedPageSize, selectedPage * selectedPageSize)
+      total = searchResults.total 
+      const adjustedPage = Math.floor(selectedPage % Math.floor(searchParams.size / selectedPageSize))
+      const startIndex = (adjustedPage -1) * selectedPageSize
+      const endIndex = startIndex + selectedPageSize
+      filteredResults = filteredResults.slice(startIndex, endIndex)
     }
 
 
@@ -146,6 +144,14 @@ export const mapStateToProps = ({ filters, searchParams, searchResults, selected
         selected: selectedSorting === 'last_updated'
       }
     ]
+
+    if (query){
+      sortOptions.unshift({
+        label: 'Best Match',
+        value: 'best_match',
+        selected: selectedSorting === 'best_match'
+      })
+    }
 
     const filterTags = getFilterTags(searchParams, filters)
 

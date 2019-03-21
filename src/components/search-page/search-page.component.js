@@ -72,10 +72,10 @@ export default class SearchPage extends React.Component {
     const numPages = Math.ceil(this.props.total / this.props.selectedPageSize)
     return (
       <div className="search-results-content">
-        <SiteBanner title='Search Results' />
+        <SiteBanner title='Browse Projects' />
         <Breadcrumbs crumbs={[
           { text: 'Home', to: '/' },
-          { text: 'Search Results' }
+          { text: 'Browse Projects' }
         ]}/>
         <div className="search-results-header">
           <div className="indented">
@@ -93,7 +93,7 @@ export default class SearchPage extends React.Component {
               boxes={this.props.boxes}
               config={[
                 ['Language', 'languages'],
-                ['Federal Agency', 'agencies'],
+                ['State Agency', 'agencies'],
                 ['Licenses', 'licenses'],
                 ['Usage Types', 'usageTypes']
                 ]}

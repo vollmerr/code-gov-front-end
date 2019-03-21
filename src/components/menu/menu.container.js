@@ -14,6 +14,7 @@ export const mapStateToProps = ({ router, searchDropdown }) => {
     logoDark: getConfigValue('content.header.logos.dark'),
     logoLight: getConfigValue('content.header.logos.light'),
     menu: getConfigValue('content.header.menu'),
+    officialBanner: getConfigValue('content.header.official_banner'),
     onHomePage,
     searchDropdown,
     siteTitle: getConfigValue('title'),

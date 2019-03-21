@@ -133,203 +133,64 @@
   }
 }
 
-.featured-projects {
-  text-align: center;
-
-  #featured-projects-title {
-    background: white;
-    color: $featured-dark;
-
-    h2 {
-      color: $featured-dark;
-      margin-top: 0;
-      padding-bottom: 0;
-    }
-  }
-
-  h2 {
-    color: $color-white;
-    font-size: 1.75em;
-    margin-bottom: 2rem;
-    padding-top: 4rem;
-    padding-bottom: 2rem;
-    text-align: center;
-    text-transform: uppercase;
-
-    @media screen and (min-width: $small-screen) {
-      font-size: 2em;
-    }
-
-    @media screen and (min-width: $medium-screen) {
-      font-size: 3em;
-    }
-  }
-}
-
-.featured-project {
-  text-align: left;
-  position: relative;
-
-  .indented {
-    height: 45rem;
-    overflow: hidden;
-    position: relative;
-
-    @media screen and (max-width: 400.5px) {
-      height: 52rem;
-    }
-
-    img {
-      display: none;
-      position: absolute;
-      top: 50%;
-      -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
-
-      @media screen and (min-width: $small-screen) {
-        display: block;
-      }
-    }
-
-
-    .featured-project-info {
-      left: 0;
-      padding: 3rem 5rem;
-      position: absolute;
-      top: 50%;
-      -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
-      width: 100%;
-
-      @media screen and (min-width: $small-screen) {
-        left: auto;
-        padding: 3rem 4rem;
-        width: 50%;
-      }
-
-      .fp-short-name {
-        font-size: 3rem;
-        font-weight: bold;
-      }
-
-      .fp-verbose-name {
-        font-size: 2rem;
-        font-weight: bold;
-      }
-
-      .fp-developed-by {
-        color: lightgray;
-        font-size: 1.5rem;
-        font-weight: bold;
-      }
-
-      .buttons {
-        text-align: center;
-
-        @media screen and (min-width: $small-screen) {
-          text-align: left;
-        }
-
-        span {
-          a {
-            text-decoration: none;
-          }
-        }
-      }
-
-      button {
-        font-size: 0.8em;
-        margin-bottom: 0;
-        margin-left: 1rem;
-        margin-right: 0;
-        margin-top: 0;
-        max-width: 170px;
-        width: 44%;
-
-        &:first-child {
-          margin-left: 0;
-          margin-right: 0.5rem;
-        }
-
-        @media screen and (min-width: $large-screen) {
-          font-size: 1em;
-        }
-      }
-    }
-
-  }
-
-  &:nth-of-type(odd) {
-    background: $featured-dark;
-    color: $color-white;
-
-    button,
-    h3,
-    h4,
-    p {
-      color: $color-white;
-    }
-
-    >div {
-      text-align: left;
-
-      >div {
-        text-align: left;
-      }
-    }
-  }
-
-  &:nth-of-type(even) {
-    background: $featured-light;
-    color: $color-white;
-
-    >div {
-
-      background-position: 0% 50%;
-      background-repeat: no-repeat;
-      background-size: 50%;
-      text-align: right;
-      >div {
-        text-align: left;
-
-        .featured-project-info {
-          .fp-short-name {
-            color: $color-gray-dark
-          }
-          .fp-verbose-name {
-            color: $color-gray-dark;
-          }
-          .fp-developed-by {
-            color: darkgray;
-          }
-        }
-      }
-    }
-  }
-
-  h3 {
-    font-size: 1.2em;
-  }
-
-  h4 {
-    font-size: 1.8em;
-    padding-bottom: 2rem;
-    padding-top: 2rem;
-  }
-
-  p {
-    padding-bottom: 1rem;
-    padding-top: 1rem;
-  }
-
-  button {
-    margin-left: 10px;
-  }
-}
-
 #issue-banner-subsection-subtitle {
   max-width: 100%;
   width: 100%;
+}
+
+#issue-link {
+  color: $brand-teal;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.featured-projects {
+
+  .featured-project {
+    background-color: white;
+
+    .indented {
+      overflow: hidden;
+    }
+
+    hr {
+      border-top: 1px solid rgb(241, 241, 241);
+      max-width: 100%;
+    }
+
+    h2 {
+      color: black;
+      font-family: 'Source Sans Pro', sans-serif;
+      text-transform: capitalize;
+      text-align: left;
+      font-size: 2.5em;
+    }
+
+    div > i{
+      display: block;
+      font-size: 75px;
+      color: #0071bc;
+      height: 100%;
+    }
+
+    .fp-description {
+      color: black;
+      font-size: 125%;
+    }
+    
+    .fp-short-name {
+      padding-top: 10px;
+    }
+
+    button {
+      font-weight: 900;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      margin-bottom: 25px;
+      font-size: 1.7rem;
+      width: 100%;
+      max-width: 230px;
+    }
+  }
 }

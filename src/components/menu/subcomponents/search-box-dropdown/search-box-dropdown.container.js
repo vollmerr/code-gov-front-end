@@ -24,7 +24,7 @@ export const mapDispatchToProps = dispatch => {
           size: 10,
           sort: 'best_match'
         }))
-        dispatch(push(`/search?page=1&query=${query}&size=10&sort=best_match`))
+        dispatch(push(`/search?page=1&query=${query}&size=1000&sort=best_match`))
       }
       dispatch(hideSearchDropdown())
     }

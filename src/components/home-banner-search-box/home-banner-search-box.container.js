@@ -23,7 +23,7 @@ export const mapDispatchToProps = dispatch => {
         dispatch(updateSearchParams({ page: 1, query, size: 10 }))
       } else {
         dispatch(updateSearchParams({ page: 1, query, size: 10, sort: 'best_match' }))
-        dispatch(push(`/search?page=1&query=${query}&size=10&sort=best_match`))
+        dispatch(push(`/search?page=1&query=${query}&size=1000&sort=best_match`))
       }
     }
   }

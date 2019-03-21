@@ -49,6 +49,7 @@ export default class SearchBox extends Component {
         <div className="search-input-wrapper">
           <div className="search-input-and-button-wrapper">
             <input
+              aria-label="Search through projects"
               onChange={::this.handleChange}
               placeholder={this.props.placeholder || 'Search Projects...'}
               ref={this.textInput}

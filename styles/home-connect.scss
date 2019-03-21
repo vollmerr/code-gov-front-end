@@ -1,0 +1,48 @@
+#connect {
+    background-color: white;
+    overflow: hidden;
+    font-size: 17px;
+    
+    .indented {
+        margin-bottom: 20px;
+
+        hr {
+            border-top: 1px solid rgb(241, 241, 241);
+            max-width: 100%;
+        }
+        h2 {
+            font-size: 2em;
+            color: black;
+        }
+        p {
+            font-size: 125%;
+        }
+        .links {
+            text-align: center;
+            align-items: center;
+
+            .card {
+                display: inline-block;
+                width: 220px;
+                background: #0071bc;
+                border-radius: 5px;
+                margin: 0 10px 20px 10px;
+                padding: 20px;
+
+                @media screen and (max-width: 510px) {
+                    width: 90%;
+                }
+                a {
+                    i {
+                        color: white !important;
+                        font-size: 75px;
+                    }
+
+                    h3 {
+                        color: white !important;
+                    }
+                }
+            }
+        }
+    }
+}

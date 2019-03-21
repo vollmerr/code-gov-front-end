@@ -6,45 +6,31 @@ export default class HomeFeaturedProject extends Component {
   render() {
     const { image, alt, short_name, verbose_name, author, description, links } = this.props.project;
 
-    const place = this.props.index % 2 === 0 ? 'even' : 'odd'
-
     return (
       <div className="block featured-project">
         <div className="indented">
 
-          {place === 'even' && (<div className="width-half"><img src={image} alt={alt}/></div>)}
-
-          <div className="width-half">
-            <div className="featured-project-info">
-              <div className="fp-short-name">{short_name}</div>
-              <div className="fp-verbose-name">{verbose_name}</div>
-              <div className="fp-developed-by">developed by {author}</div>
-              <p className="fp-description">{description}</p>
-              <div className="buttons">
-                {links.map(link => {
-                  if (link.url.startsWith('http')) {
-                    return (
-                      <span key={link.url}>
-                        <a href={link.url}>
-                          <button className="alt">{link.name}</button>
-                        </a>
-                      </span>
-                    )
-                  } else {
-                    return (
-                      <span key={link.url}>
-                        <CustomLink to={link.url}>
-                          <button className="alt">{link.name}</button>
-                        </CustomLink>
-                      </span>
-                    )
-                  }
-                })}
+        <hr />
+            <div className="width-third">
+              <h2 className="fp-short-name">{short_name}</h2>
+              <div align='center'>
+                <i className={image} alt={alt}/>
               </div>
             </div>
-          </div>
+            <div className="width-two-thirds">
+              <p className="fp-description">{description}</p>
+                {links.map(link => {
+                  const Link = link.url.startsWith('http') ? 'a' : CustomLink;
 
-          {place === 'odd' && (<div className="width-half"><img src={image} alt={alt}/></div>)}
+                  return (
+                    <span key={link.url}>
+                      <Link to={link.url} href={link.url}>
+                        <button>{link.name}</button>
+                      </Link>
+                    </span>
+                  )
+                })}
+            </div>
 
         </div>
       </div>
