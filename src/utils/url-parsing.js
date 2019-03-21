@@ -22,7 +22,6 @@ export function convertObjToSortedSearchString(obj) {
     .sort() // sort keys alphabetically
     .map(key => [key, obj[key]])
     .map(([key, value]) => {
-      console.warn("sorting value:", [key, value])
       if (Array.isArray(value)) {
         return [key, value.sort()]
       } else {

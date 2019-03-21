@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <TaskCardComponent /> component should render correctly 1`] = `
+<div
+  className="card-list-item card focusable"
+>
+  <h3
+    className="card-title"
+  >
+    <a
+      href="testUrl"
+      target="_blank"
+    >
+      TestTitle
+    </a>
+  </h3>
+  <p
+    className="card-description"
+  >
+    TestDescription
+  </p>
+  <dl
+    className="inline-after-600px show-w-gt-900"
+  >
+    <dt>
+      Agency:
+    </dt>
+    <dd>
+      <Connect(CustomLinkComponent)
+        to="/browse-projects?agencies=TestAcronym"
+      >
+        TestName
+      </Connect(CustomLinkComponent)>
+    </dd>
+    <CardPart
+      text="Not Available"
+      title="Last Updated"
+    />
+    <hr />
+    <CardPart
+      text="C#,HTML"
+      title="Languages"
+    />
+    <CardPart
+      text="Web"
+      title="Type"
+    />
+    <CardPart
+      text="4"
+      title="Skill Level"
+    />
+    <CardPart
+      text="10"
+      title="Effort"
+    />
+  </dl>
+</div>
+`;
+
+exports[`Testing <TaskCardComponent /> component should render correctly without description,title, or agencyName 1`] = `
+<div
+  className="card-list-item card focusable"
+>
+  <dl
+    className="inline-after-600px show-w-gt-900"
+  >
+    <CardPart
+      text="Not Available"
+      title="Last Updated"
+    />
+    <hr />
+    <CardPart
+      text="C#,HTML"
+      title="Languages"
+    />
+    <CardPart
+      text="Web"
+      title="Type"
+    />
+    <CardPart
+      text="4"
+      title="Skill Level"
+    />
+    <CardPart
+      text="10"
+      title="Effort"
+    />
+  </dl>
+</div>
+`;

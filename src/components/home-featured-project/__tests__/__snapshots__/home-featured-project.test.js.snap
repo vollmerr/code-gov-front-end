@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <HomeFeaturedProject /> component should render correct 1`] = `
+<div
+  className="block featured-project"
+>
+  <div
+    className="indented"
+  >
+    <hr />
+    <div
+      className="width-third"
+    >
+      <h2
+        className="fp-short-name"
+      >
+        test-short-name
+      </h2>
+      <div
+        align="center"
+      >
+        <i
+          alt="test-alt"
+          className="fa fa-comments"
+        />
+      </div>
+    </div>
+    <div
+      className="width-two-thirds"
+    >
+      <p
+        className="fp-description"
+      >
+        test-description
+      </p>
+      <span
+        key="https://test-link.com"
+      >
+        <a
+          href="https://test-link.com"
+        >
+          <button>
+            test-link-name
+          </button>
+        </a>
+      </span>
+    </div>
+  </div>
+</div>
+`;

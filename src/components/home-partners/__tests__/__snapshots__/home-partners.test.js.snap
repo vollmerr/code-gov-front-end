@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <HomePartners /> component should render correct 1`] = `
+<div
+  className="block featured-project"
+  id="partners"
+>
+  <div
+    className="indented"
+  >
+    <hr />
+    <h2>
+      Partners
+    </h2>
+    <p>
+      Code California is an open collaboration between California state government agencies, industry partners and civic technologists. Participating agencies:
+    </p>
+    <div
+      className="links"
+    >
+      <span>
+        <a
+          href="https://www.govops.ca.gov/"
+        >
+          <img
+            alt="California GovOps logo"
+            src="../../../assets/img/logos/govops.png"
+          />
+        </a>
+      </span>
+      <span>
+        <a
+          href="https://cdt.ca.gov/"
+        >
+          <img
+            alt="California Department of Technology logo"
+            src="../../../assets/img/logos/cdt.png"
+          />
+        </a>
+      </span>
+    </div>
+  </div>
+</div>
+`;

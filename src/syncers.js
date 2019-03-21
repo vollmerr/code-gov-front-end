@@ -18,7 +18,6 @@ const syncers = [
       state.taskParams
     ]),
     sync: (state, dispatch) => {
-      console.log("syncing url search params")
       dispatch(syncURLSearchParams(state))
     }
   },
@@ -40,12 +39,8 @@ const syncers = [
       console.warn("searchParams changed")
       count++
       if (count < threshold) {
-        if (state.searchParams && state.searchParams.query && state.searchParams.query !== '') {
-          dispatch(updateSearchResults(state.searchParams))
-        } else {
-          dispatch(clearSearchResults())
+        dispatch(updateSearchResults(state.searchParams))
         }
-      }
     }
   },
   {

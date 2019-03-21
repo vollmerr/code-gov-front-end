@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <FilterTags /> component should render correct 1`] = `
+<div
+  className="filter-tags"
+>
+  <FilterTag
+    category="test-category"
+    key="test-category:test-value"
+    onClick={[MockFunction]}
+    title="test-title"
+    value="test-value"
+  />
+</div>
+`;

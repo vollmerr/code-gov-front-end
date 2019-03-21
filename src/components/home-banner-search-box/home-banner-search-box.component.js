@@ -22,24 +22,24 @@ export default class HomeBannerSearchBoxComponent extends Component {
     this.mounted = false
   }
 
-  handleBlur() {
+  handleBlur = () => {
     if (this.mounted) {
       this.setState({ showAutocomplete: false })
     }
   }
 
-  handleFocus() {
+  handleFocus = () => {
     if (this.mounted) {
       this.setState({ showAutocomplete: true })
     }
   }
 
-  handleChange(value) {
+  handleChange = (value) => {
     client.suggest(value, 5).then(terms => {
       const suggestions = map(terms, term => {
         return {
           text: term,
-          to: `/search?query=${term}&page=1&size=10`
+          to: `/search?query=${term}&page=1&size=1000`
         }
       })
       if (this.mounted) {
@@ -51,7 +51,7 @@ export default class HomeBannerSearchBoxComponent extends Component {
     })
   }
 
-  handleClick({text, to}) {
+  handleClick = ({text, to}) => {
     this.props.onSubmit(text)
   }
 
@@ -67,13 +67,13 @@ export default class HomeBannerSearchBoxComponent extends Component {
           <div className="search-input-and-button-wrapper">
             <SearchBox
               placeholder={placeholder}
-              onBlur={::this.handleBlur}
-              onChange={::this.handleChange}
-              onFocus={::this.handleFocus}
+              onBlur={this.handleBlur}
+              onChange={this.handleChange}
+              onFocus={this.handleFocus}
               onSubmit={onSubmit}
               query={query}
             />
-            {this.state.showAutocomplete && some(this.state.suggestions) && <Autocomplete options={this.state.suggestions} onClick={::this.handleClick}/>}
+            {this.state.showAutocomplete && some(this.state.suggestions) && <Autocomplete options={this.state.suggestions} onClick={this.handleClick}/>}
           </div>
         </div>
       </div>

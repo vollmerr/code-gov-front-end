@@ -1,105 +1,63 @@
-section#banner-home {
+#banner-home.banner {
+    background-image: none;
+    background-color: #0071bc; 
+    background-size: auto; 
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
 
-  /* this get the banner image to lay under the menu on the home page */
-  margin-top: -50px;
+    @media screen and (max-width: 988px) {
+        margin-top: 50px;
+    }
 
-  .banner-content {
+    @media screen and (max-width: 800px) {
+      margin-top: 0px;
+    }
 
-    padding-top: 100px;
-    position: absolute;
-    top: 50%;
+    &.medium {
+      height: 70vh;
+    }
 
-    /* adds some additional spacing between sections */
-    .indented {
-      @media screen and (max-width: 600px) {
-        margin-top: 5rem;
+    .banner-content {
+      position: absolute;
+      top: 50%;
+
+      .banner-subsection {
+        height: 14rem;
       }
-      @media screen and (min-height: 800px) and (min-width: 600px) {
-        margin-top: 10rem;
+    }
+
+    .banner-title {
+      color: #ffffff;
+      font-family: 'Source Sans Pro', sans-serif !important;
+      font-size: 2em;
+      margin-bottom: 0;
+      margin-top: 0;
+      text-transform: capitalize !important;
+      font-weight: 900;
+    
+      @media screen and (min-width: $small-screen) {
+        font-size: 2.8em;
       }
-      @media screen and (max-height: 800px) and (min-width: 600px) {
-        margin-top: 2rem;
+    
+      @media screen and (min-width: $medium-screen) {
+        font-size: 3.2em;
       }
     }
 
     .banner-subtitle {
-      @media screen and (max-width: 1200px) {
-        display: none;
+      color: $color-white;
+      font-family: 'Source Sans Pro', sans-serif !important;
+      font-size: 24px !important;
+      font-weight: 400;
+      margin: 0 auto;
+      max-width: 120rem !important;
+    
+      @media screen and (min-width: $small-screen) {
+        font-size: 1.2em;
       }
-    }
-
-    .banner-subsection {
-      height: 14rem;
-
-      @media screen and (min-height: 800px) and (min-width: 600px) {
-        height: 17rem;
+    
+      @media screen and (min-width: $medium-screen) {
+        font-size: 1.4em;
       }
-
-      .banner-subsection-content {
-        @include center-vertically();
-
-        .banner-subsection-content-padder {
-          .buttons {
-            padding-top: 7px;
-          }
-        }
-      }
-
-      @media screen and (max-width: 600px) {
-        &#banner-subsection-engage {
-          display: none;
-        }
-      }
-
-
-      @media screen and (min-width: 1200px) {
-        &:first-child {
-          .banner-subsection-content-padder {
-            padding-right: 80px;
-          }
-        }
-
-        &:last-child {
-          .banner-subsection-content-padder {
-            padding-left: 80px;
-          }
-        }
-      }
-    }
-
-    //div between Search and Help Wanted
-    .vertical-row {
-      @media screen and (min-width: 600px) {
-        display: inline-block;
-        height: 17rem;
-        width: 3px;
-        background: white;
-        position: relative;
-      }
-    }
-
-
-  .search-description-wrapper {
-    margin: 0 auto;
-    text-align: left;
-    width: 100%;
-
-    > div {
-      text-align: left;
-    }
-  }
-
-
-  }
-  img.chat {
-    height: 30px;
-    vertical-align: middle;
-  }
-
-  .home-link {
-    color: $brand-teal;
-    &:hover {
-      text-decoration: none;
-    }
-  }
+    }    
 }

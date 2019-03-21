@@ -33,24 +33,24 @@ export default class QuickSearchBoxComponent extends React.Component {
     }
   }
 
-  handleBlur() {
+  handleBlur = () => {
     if (this.mounted) {
       this.setState({ showAutocomplete: false })
     }
   }
 
-  handleFocus() {
+  handleFocus = () => {
     if (this.mounted) {
       this.setState({ showAutocomplete: true })
     }
   }
 
-  handleChange(value) {
+  handleChange = (value) => {
     client.suggest(value, 5).then(terms => {
       const suggestions = map(terms, term => {
         return {
           text: term,
-          to: `/search?query=${term}&page=1&size=10`
+          to: `/search?query=${term}&page=1&size=1000`
         }
       })
       if (this.mounted) {
@@ -62,7 +62,7 @@ export default class QuickSearchBoxComponent extends React.Component {
     })
   }
 
-  handleSelection(value) {
+  handleSelection = (value) => {
     if (this.mounted) {
       this.setState({
         showAutocomplete: false,
@@ -77,13 +77,13 @@ export default class QuickSearchBoxComponent extends React.Component {
       <Fragment>
         <SearchBox
           placeholder={this.props.placeholder}
-          onBlur={::this.handleBlur}
-          onFocus={::this.handleFocus}
-          onChange={::this.handleChange}
+          onBlur={this.handleBlur}
+          onFocus={this.handleFocus}
+          onChange={this.handleChange}
           onSubmit={this.props.onSubmit}
           value={this.state.value}
         />
-        {this.state.showAutocomplete && some(this.state.suggestions) && <Autocomplete onClick={::this.handleSelection} options={this.state.suggestions}/>}
+        {this.state.showAutocomplete && some(this.state.suggestions) && <Autocomplete onClick={this.handleSelection} options={this.state.suggestions}/>}
       </Fragment>
     )
   }

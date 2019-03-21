@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <HomeFeaturedProjects /> component should render correct 1`] = `
+<Connect(HomeFeaturedProjects)
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <HomeFeaturedProjects
+    dispatch={[Function]}
+    featuredProjects={
+      Array [
+        Object {
+          "alt": "test-alt",
+          "description": "test-description",
+          "image": "fa fa-comments",
+          "links": Array [
+            Object {
+              "name": "test-link-name",
+              "url": "https://test-link.com",
+            },
+          ],
+          "short_name": "test-short-name",
+        },
+      ]
+    }
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+  >
+    <section
+      className="featured-projects"
+    >
+      <HomeFeaturedProject
+        index={0}
+        key="test-short-name"
+        project={
+          Object {
+            "alt": "test-alt",
+            "description": "test-description",
+            "image": "fa fa-comments",
+            "links": Array [
+              Object {
+                "name": "test-link-name",
+                "url": "https://test-link.com",
+              },
+            ],
+            "short_name": "test-short-name",
+          }
+        }
+      >
+        <div
+          className="block featured-project"
+        >
+          <div
+            className="indented"
+          >
+            <hr />
+            <div
+              className="width-third"
+            >
+              <h2
+                className="fp-short-name"
+              >
+                test-short-name
+              </h2>
+              <div
+                align="center"
+              >
+                <i
+                  alt="test-alt"
+                  className="fa fa-comments"
+                />
+              </div>
+            </div>
+            <div
+              className="width-two-thirds"
+            >
+              <p
+                className="fp-description"
+              >
+                test-description
+              </p>
+              <span
+                key="https://test-link.com"
+              >
+                <a
+                  href="https://test-link.com"
+                >
+                  <button>
+                    test-link-name
+                  </button>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </HomeFeaturedProject>
+    </section>
+  </HomeFeaturedProjects>
+</Connect(HomeFeaturedProjects)>
+`;

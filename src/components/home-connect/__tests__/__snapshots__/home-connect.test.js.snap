@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <HomeConnect /> component should render correct 1`] = `
+<div
+  className="block"
+  id="connect"
+>
+  <div
+    className="indented"
+  >
+    <hr />
+    <h2>
+      Connect
+    </h2>
+    <p>
+      Connect with Code California.
+    </p>
+    <div
+      className="links"
+    >
+      <span
+        className="card"
+      >
+        <a
+          href="https://www.govops.ca.gov/"
+        >
+          <i
+            className="fa fa-envelope"
+          />
+          <h3>
+            Subscribe
+          </h3>
+        </a>
+      </span>
+      <span
+        className="card"
+      >
+        <a
+          href="https://www.govops.ca.gov/"
+        >
+          <i
+            className="fa fa-twitter-square"
+          />
+          <h3>
+            Twitter
+          </h3>
+        </a>
+      </span>
+      <span
+        className="card"
+      >
+        <a
+          href="https://www.govops.ca.gov/"
+        >
+          <i
+            className="fa fa-facebook-square"
+          />
+          <h3>
+            Facebook
+          </h3>
+        </a>
+      </span>
+      <span
+        className="card"
+      >
+        <a
+          href="https://www.govops.ca.gov/"
+        >
+          <i
+            className="fa fa-medium"
+          />
+          <h3>
+            Medium
+          </h3>
+        </a>
+      </span>
+    </div>
+  </div>
+</div>
+`;

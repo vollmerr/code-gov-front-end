@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <FilterBox /> component should render correct 1`] = `
+<FilterBox
+  onChange={[MockFunction]}
+  options={
+    Array [
+      Object {
+        "checked": false,
+        "name": "Example Dept",
+        "value": "Exa",
+      },
+    ]
+  }
+  title="test-title"
+>
+  <filter-box
+    onClick={[Function]}
+    options="[{\\"name\\":\\"Example Dept\\",\\"value\\":\\"Exa\\",\\"checked\\":false}]"
+    title="test-title"
+  />
+</FilterBox>
+`;

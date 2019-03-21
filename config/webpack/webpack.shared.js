@@ -203,15 +203,16 @@ module.exports = {
       }
     }),
     new DefinePlugin({
-      'ENABLE_GOOGLE_ANALYTICS': JSON.stringify(process.env.CODE_GOV_BRANCH === 'federalist-prod'),
+      'ENABLE_GOOGLE_ANALYTICS': JSON.stringify(false),
       'PUBLIC_PATH': JSON.stringify(PUBLIC_PATH),
-      'SITE_CONFIG': JSON.stringify(SITE_CONFIG)
+      'SITE_CONFIG': JSON.stringify(SITE_CONFIG),
+      
     }),
-    new EnvironmentPlugin([
-      'CODE_GOV_API_BASE',
-      'CODE_GOV_API_KEY',
-      'CODE_GOV_TASKS_URL'
-    ]),
+    new EnvironmentPlugin({
+      'CODE_GOV_API_BASE': process.env.NODE_ENV == '' || process.env.NODE_ENV == 'dev' ? 'http://localhost:6001/api/' : SITE_CONFIG.api.base,
+      // 'CODE_GOV_API_KEY',
+      'CODE_GOV_TASKS_URL': process.env.NODE_ENV == '' || process.env.NODE_ENV == 'dev' ? 'http://localhost:6001/api/open-tasks' : SITE_CONFIG.api.base
+    }),
     new CleanWebpackPlugin([OUTPUT_PATH], { root: rootDir }),
     new CopyWebpackPlugin(patterns),
     new FaviconsWebpackPlugin('./assets/img/favicon.png'),

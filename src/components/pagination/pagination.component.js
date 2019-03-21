@@ -18,11 +18,11 @@ export default class Pagination extends Component {
     }
   }
 
-  handleNext() {
+  handleNext = () => {
     this.handleChangePage(Number(this.props.page) + 1)
   }
 
-  handlePrevious() {
+  handlePrevious = () => {
     this.handleChangePage(Number(this.props.page) - 1)
   }
 
@@ -34,7 +34,7 @@ export default class Pagination extends Component {
     if (equal(this.props.page, 1)) {
       return <span aria-label="Previous"><i className="icon icon-angle-circled-left"></i> Prev</span>
     } else if (Number(this.props.page) > 1) {
-      return <a onClick={::this.handlePrevious}><i className="icon icon-angle-circled-left"></i> Prev</a>
+      return <a onClick={this.handlePrevious}><i className="icon icon-angle-circled-left"></i> Prev</a>
     }
   }
 
@@ -42,7 +42,7 @@ export default class Pagination extends Component {
     if (this.isLastPage) {
       return <span>Next <i className="icon icon-angle-circled-right"></i></span>
     } else {
-      return <a onClick={::this.handleNext}>Next <i className="icon icon-angle-circled-right"></i></a>
+      return <a onClick={this.handleNext}>Next <i className="icon icon-angle-circled-right"></i></a>
     }
   }
 
@@ -114,7 +114,7 @@ export default class Pagination extends Component {
             const ellipsis = endsWith(i, 'ellipsis')
             let current = equal(i, page)
             let className = 'page'
-            const tabIndex = index + 1
+            const tabIndex = 0
             if (i === 1) className += ' first'
             if (current) className += ' current'
             return (
@@ -125,7 +125,7 @@ export default class Pagination extends Component {
               </li>
             )
           })}
-          <li className={'pagination-next' + (this.isLastPage ? ' disabled' : '')} tabIndex="8">
+          <li className={'pagination-next' + (this.isLastPage ? ' disabled' : '')} tabIndex="0">
             {this.rightIcon}
           </li>
         </ul>

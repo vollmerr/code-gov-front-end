@@ -1,9 +1,6 @@
 header.main {
   height: $header-height;
-
-
   nav {
-
     @media screen and (max-width: $header-switch) {
       height: 100%;
       min-height: $header-height;
@@ -12,8 +9,8 @@ header.main {
 
     a {
       img {
-        height: 33px;
-        max-width: 175px;
+        // height: 40px;
+        // width: 175px;
 
         @media screen and (max-width: $header-switch) {
           padding: 5px;
@@ -60,7 +57,7 @@ header.main {
   padding: 0.5rem 2rem;
   position: fixed;
   right: 0;
-  top: 20px;
+  top: 5px;
   transition: 0.25s linear transform;
   width: 100%;
   z-index: 2;
@@ -74,7 +71,7 @@ header.main {
   }
 
   &.active {
-    transform: translateY(55px);
+    transform: translateY(79px);
   }
 
   .close-search-box-button {

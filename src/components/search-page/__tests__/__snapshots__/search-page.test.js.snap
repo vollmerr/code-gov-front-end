@@ -1,0 +1,225 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <SearchPage /> component should render correctly 1`] = `
+<SearchPage
+  boxes={
+    Object {
+      "agencies": Array [
+        Object {
+          "checked": false,
+          "name": "test-name",
+          "value": "TV",
+        },
+      ],
+      "languages": Array [
+        Object {
+          "checked": false,
+          "name": "test-name",
+          "value": "TV",
+        },
+      ],
+      "licenses": Array [
+        Object {
+          "checked": false,
+          "name": "test-name",
+          "value": "TV",
+        },
+      ],
+      "usageTypes": Array [
+        Object {
+          "checked": false,
+          "name": "test-name",
+          "value": "TV",
+        },
+      ],
+    }
+  }
+  filterTags={Array []}
+  filteredResults={Array []}
+  filters={
+    Object {
+      "agencies": Array [
+        Object {
+          "name": "test-name",
+          "value": "TV",
+        },
+      ],
+      "languages": Array [
+        Object {
+          "name": "test-name",
+          "value": "TV",
+        },
+      ],
+      "licenses": Array [
+        Object {
+          "name": "test-name",
+          "value": "TV",
+        },
+      ],
+      "usageTypes": Array [
+        Object {
+          "name": "test-name",
+          "value": "TV",
+        },
+      ],
+    }
+  }
+  onFilterBoxChange={[Function]}
+  onFilterTagClick={[Function]}
+  onSortChange={[Function]}
+  saveFilterData={[Function]}
+  searchParams={
+    Object {
+      "filters": Array [],
+      "page": 1,
+      "size": 10,
+      "sort": "data_quality",
+    }
+  }
+  searchResults={
+    Object {
+      "params": Object {
+        "agencies": Array [],
+        "languages": Array [],
+        "licenses": Array [],
+        "page": 1,
+        "size": 10,
+        "sort": "data_quality",
+        "usageTypes": Array [],
+      },
+      "repos": Array [
+        Object {
+          "agency": Object {
+            "acronym": "TA1",
+            "codeUrl": "https://raw.githubusercontent.com/cdt-bpa/code.ca.gov-remote-files/master/CWDS.json",
+            "fallback_file": "CWDS.json",
+            "name": "Test Agency 1",
+            "website": "https://TA1.ca.gov/",
+          },
+          "contact": Object {
+            "email": "",
+            "name": "",
+          },
+          "date": Object {
+            "created": "2017-07-28T07:00:00.000Z",
+            "lastModified": "2018-07-25T07:00:00.000Z",
+            "metadataLastUpdated": "2019-01-14T08:00:00.000Z",
+          },
+          "description": "Jenkins acceptance tests repo",
+          "homepageURL": "https://github.com/ca-cwds/jenkins-acceptance-test-builds",
+          "laborHours": 0,
+          "languages": Array [],
+          "name": "jenkins-acceptance-test-builds",
+          "organization": "CWDS",
+          "permissions": Object {
+            "licenses": Array [
+              undefined,
+            ],
+            "usageType": "openSource",
+          },
+          "repoID": "cwds_cwds_jenkins_acceptance_test_builds1",
+          "repositoryURL": "https://github.com/ca-cwds/jenkins-acceptance-test-builds",
+          "score": 8.299999999999999,
+          "searchScore": 14.710426,
+          "tags": Array [
+            "",
+          ],
+          "vcs": "git",
+        },
+        Object {
+          "agency": Object {
+            "acronym": "TA2",
+            "codeUrl": "https://raw.githubusercontent.com/cdt-bpa/code.ca.gov-remote-files/master/CWDS.json",
+            "fallback_file": "CWDS.json",
+            "name": "Test Agency 2",
+            "website": "https://TA2.ca.gov/",
+          },
+          "contact": Object {
+            "email": "",
+            "name": "",
+          },
+          "date": Object {
+            "created": "2017-07-28T07:00:00.000Z",
+            "lastModified": "2018-07-25T07:00:00.000Z",
+            "metadataLastUpdated": "2019-01-14T08:00:00.000Z",
+          },
+          "description": "Jenkins acceptance tests repo",
+          "homepageURL": "https://github.com/ca-cwds/jenkins-acceptance-test-builds",
+          "laborHours": 0,
+          "languages": Array [],
+          "name": "jenkins-acceptance-test-builds",
+          "organization": "CWDS",
+          "permissions": Object {
+            "licenses": Array [
+              undefined,
+            ],
+            "usageType": "openSource",
+          },
+          "repoID": "cwds_cwds_jenkins_acceptance_test_builds2",
+          "repositoryURL": "https://github.com/ca-cwds/jenkins-acceptance-test-builds",
+          "score": 8.299999999999999,
+          "searchScore": 14.710426,
+          "tags": Array [
+            "",
+          ],
+          "vcs": "git",
+        },
+      ],
+      "total": 1,
+    }
+  }
+  selectedPage={1}
+  sortOptions={
+    Array [
+      Object {
+        "label": "Data Quality",
+        "selected": true,
+        "value": "data_quality",
+      },
+      Object {
+        "label": "A-Z",
+        "selected": false,
+        "value": "a-z",
+      },
+      Object {
+        "label": "Last Updated",
+        "selected": false,
+        "value": "last_update",
+      },
+    ]
+  }
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "clear": [Function],
+        "get": [Function],
+        "notify": [Function],
+        "subscribe": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": [Function],
+    }
+  }
+  total={1}
+  updatePage={[Function]}
+/>
+`;

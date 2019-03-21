@@ -39,12 +39,12 @@ export default class OpenTasks extends React.Component {
     return <h3 className="repos-count width-three-quarters">{textContent}</h3>
   }
 
-  onFilterBoxChange(category, values) {
+  onFilterBoxChange = (category, values) => {
     scrollToTopOfResults()
     this.props.onFilterBoxChange(category, values)
   }
 
-  updatePage(newPage) {
+  updatePage = (newPage) => {
     scrollToTopOfResults()
     this.props.updatePage(newPage)
   }
@@ -71,13 +71,13 @@ export default class OpenTasks extends React.Component {
             <FilterBoxes
               boxes={this.props.boxes}
               config={[
-                //['Language', 'languages'],
-                ['Federal Agency', 'agencies'],
+                ['Language', 'languages'],
+                ['State Agency', 'agencies'],
                 ['Skill Level', 'skillLevels'],
                 ['Time Required', 'timeRequired'],
                 ['Type', 'categories']
                 ]}
-              onFilterBoxChange={::this.onFilterBoxChange}
+              onFilterBoxChange={this.onFilterBoxChange}
             />
 
           </div>
@@ -87,7 +87,7 @@ export default class OpenTasks extends React.Component {
                 <span>Explore Open Tasks</span>
               </h2>
             </div>
-            <FilterTags filters={this.props.filterTags} onClick={::this.props.onFilterTagClick} />
+            <FilterTags filters={this.props.filterTags} onClick={this.props.onFilterTagClick} />
             <div className="card-list">
               <div className="card-container">
                 <ul className="card-ul">
@@ -96,7 +96,7 @@ export default class OpenTasks extends React.Component {
                   })}
                 </ul>
               </div>
-              {numPages > 0 && <Pagination count={this.props.total} pagesize={this.props.selectedPageSize} page={this.props.selectedPage} updatePage={::this.updatePage} />}
+              {numPages > 0 && <Pagination count={this.props.total} pagesize={this.props.selectedPageSize} page={this.props.selectedPage} updatePage={this.updatePage} />}
             </div>
           </div>
         </div>

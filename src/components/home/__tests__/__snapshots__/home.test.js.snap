@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <Home /> component should render correct 1`] = `
+<Fragment>
+  <Connect(HomeBanner) />
+  <Connect(HomeAbout) />
+  <Connect(HomeFeaturedProjects) />
+  <Connect(HomeProjectBoardComponent) />
+  <HomePartners />
+  <HomeConnect />
+</Fragment>
+`;

@@ -2,7 +2,6 @@ import { forEach } from '@code.gov/cautious'
 import AppComponent from './app.component'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
-import loadProject from 'actions/load-project'
 import updateBrowseParams from 'actions/update-browse-params'
 import updateSearchParams from 'actions/update-search-params'
 import updateTaskParams from 'actions/update-task-params'
@@ -13,13 +12,13 @@ import {
 import { getConfigValue, now } from 'utils/other'
 import defaultState from 'constants/default-redux-store-state'
 
-export const mapStateToProps = () => {
+const mapStateToProps = () => {
   return {
     plugins: getConfigValue('plugins'),
   }
 }
 
-export const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch => {
   return {
     rehydrate: () => {
       const section = getSection()
@@ -28,11 +27,9 @@ export const mapDispatchToProps = dispatch => {
         if (section === 'browse' || section === 'search') {
           const filters = []
           forEach(['agencies', 'languages', 'licenses', 'usageTypes'], key => {
-            console.log("key:", key)
             if (parsed[key]) {
               const values = parsed[key]
               if (values) {
-                console.log("values:", values)
                 values.forEach(value => {
                   filters.push({ category: key, value, modified: now() })
                 })

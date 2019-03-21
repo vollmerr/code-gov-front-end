@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <Breadcrumbs /> component should render correct 1`] = `
+<div
+  className="indented"
+>
+  <ul
+    className="breadcrumbs"
+  >
+    <li
+      key="test"
+    >
+      <Connect(CustomLinkComponent)
+        to="/"
+      >
+        test
+      </Connect(CustomLinkComponent)>
+    </li>
+  </ul>
+</div>
+`;
