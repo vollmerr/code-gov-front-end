@@ -23,7 +23,6 @@ export default class Menu extends Component {
       menu: props.menu
     }
 
-    this.onClickMenuOption = this.onClickMenuOption.bind(this)
     this.header = React.createRef()
   }
 
@@ -67,7 +66,7 @@ export default class Menu extends Component {
   get menus() {
     return this.props.menu.map(menuOption => (
       <Fragment key={menuOption.name}>
-        <PrimaryMenuOption menuOption={menuOption} onClick={this.onClickMenuOption}/>
+        <PrimaryMenuOption menuOption={menuOption} onClick={::this.onClickMenuOption}/>
         <SecondaryMenuOption menuOption={menuOption} />
       </Fragment>
     ));
@@ -114,8 +113,8 @@ export default class Menu extends Component {
             {map(this.props.menu, menuOption => {
               return (
                 <li className={(menuOption.expanded ? 'expanded' : '') } key={menuOption.name} role="none">
-                  <PrimaryMenuOption menuOption={menuOption} onClick={this.onClickMenuOption}/>
-                  <SecondaryDropdown menuOption={menuOption} onClick={this.collapse}/>
+                  <PrimaryMenuOption menuOption={menuOption} onClick={::this.onClickMenuOption}/>
+                  <SecondaryDropdown menuOption={menuOption} onClick={::this.collapse}/>
                 </li>
               )
             })}

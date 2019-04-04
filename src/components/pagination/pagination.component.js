@@ -114,7 +114,7 @@ export default class Pagination extends Component {
             const ellipsis = endsWith(i, 'ellipsis')
             let current = equal(i, page)
             let className = 'page'
-            const tabIndex = index + 1
+            const tabIndex = '0'
             if (i === 1) className += ' first'
             if (current) className += ' current'
             return (
@@ -125,7 +125,7 @@ export default class Pagination extends Component {
               </li>
             )
           })}
-          <li className={'pagination-next' + (this.isLastPage ? ' disabled' : '')} tabIndex="8">
+          <li className={'pagination-next' + (this.isLastPage ? ' disabled' : '')} tabIndex="0">
             {this.rightIcon}
           </li>
         </ul>

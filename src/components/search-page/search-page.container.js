@@ -40,7 +40,7 @@ export const mapStateToProps = ({ filters, searchParams, searchResults, selected
 
     const query = searchParams.query
     const selectedPage = searchParams.page
-    const selectedPageSize = searchParams.size
+    const selectedPageSize = searchParams.pageSize
     let selectedSorting = searchParams.sort
 
     let boxes = {}
@@ -61,7 +61,6 @@ export const mapStateToProps = ({ filters, searchParams, searchResults, selected
     let total = 0
     let filteredResults
     if (searchResults) {
-
       filteredResults = searchResults.repos
       .sort((a, b) => {
         if (selectedSorting === 'best_match') {
@@ -70,7 +69,7 @@ export const mapStateToProps = ({ filters, searchParams, searchResults, selected
           return sortByDataQuality(a, b)
         } else if (selectedSorting === 'a-z') {
           return sortByName(a, b)
-        } else if (selectedSorting === 'last_updated') {
+        } else if (selectedSorting === 'last_update') {
           return sortByDate(a, b)
         }
       })
@@ -135,12 +134,12 @@ export const mapStateToProps = ({ filters, searchParams, searchResults, selected
       },
       {
         label: 'Last Updated',
-        value: 'last_updated',
-        selected: selectedSorting === 'last_updated'
+        value: 'last_update',
+        selected: selectedSorting === 'last_update'
       }
     ]
 
-    if (query){
+    if (query) {
       sortOptions.unshift({
         label: 'Best Match',
         value: 'best_match',
@@ -163,8 +162,6 @@ export const mapStateToProps = ({ filters, searchParams, searchResults, selected
       query,
       total
     }
-
-    console.log("search-page.container's mapStateToProps function is returning", result)
 
     return result
   } catch (error) {

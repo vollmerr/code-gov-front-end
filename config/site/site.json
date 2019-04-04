@@ -157,33 +157,50 @@
       }
     },
     "footer": {
-      "links": [{
-          "name": "Privacy Policy",
-          "url": "/privacy-policy"
+      "logo": {
+        "image": "assets/img/logo-reverse.png",
+        "alt": "Code California logo"
+      },
+      "links": [
+        {
+          "name": "Subscribe to the Newsletter",
+          "url": "http://eepurl.com/dDrRC1",
+          "icon": "envelope"
         },
         {
-          "name": "Roadmap",
-          "url": "/roadmap"
+          "name": "Link to Medium",
+          "url": "https://medium.com/code-california",
+          "icon": "medium"
         },
         {
-          "name": "Visit Project Page",
-          "url": "https://github.com/GSA/code-gov-front-end"
-        }
-      ],
-      "logos": [{
-          "image": "/assets/img/logos/whitehouse.png",
-          "name": "The White House",
-          "url": "https://whitehouse.gov/"
+          "name": "Join us on Slack",
+          "url": "https://join.slack.com/t/codecagov/shared_invite/enQtNDU3MDY2NDUyMTk3LTkxMzEwYzU3MzdkNTE3ZGE0OGY4MjU5YzUzMTE5ODgwZjc3ZDE3MjlhMjQ3NTJkN2Y2NzFmZDk0NzZmNzgwYmU",
+          "icon": "slack"
         },
         {
-          "image": "/assets/img/logos/PIF.png",
-          "name": "Presidential Innovation Fellows",
-          "url": "https://presidentialinnovationfellows.gov/"
+          "name": "Twitter Link",
+          "url": "https://twitter.com/CodeCAgov",
+          "icon": "twitter"
         },
         {
-          "image": "/assets/img/logos/GSA.png",
-          "name": "U.S. General Services Administration",
-          "url": "https://www.gsa.gov/"
+          "name": "Facebook Link",
+          "url": "https://www.facebook.com/codeCAgov",
+          "icon": "facebook"
+        },
+        {
+          "name": "GitHub Link",
+          "url": "https://github.com/cagov/codeCAgov",
+          "icon": "github"
+        },
+        {
+          "name": "Eventbrite Link",
+          "url": "http://codeCAgov.eventbrite.com",
+          "icon": "calendar"
+        },
+        {
+          "name": "Medium feed Link",
+          "url": "https://medium.com/feed/code-california",
+          "icon": "feed"
         }
       ]
     },

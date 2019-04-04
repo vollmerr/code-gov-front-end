@@ -15,7 +15,6 @@ export default function (params) {
     }
     console.log("filtersAsObject", options)
     const results = await client.repos(options)
-    console.error("results from client.repos with filters", options, "is", results.repos.length)
     results.params = options
     dispatch({ type: UPDATE_BROWSE_RESULTS, results })
   }

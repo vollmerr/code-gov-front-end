@@ -14,6 +14,7 @@ export default {
     page: 1,
     query: '',
     size: 1000,
+    pageSize: 10,
     sort: 'best_match',
     filters: []
   },

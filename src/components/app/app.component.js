@@ -4,7 +4,6 @@ import { Route, Switch } from 'react-router-dom'
 import { ConnectedRouter } from 'connected-react-router'
 import history from 'browser-history'
 import Home from 'components/home'
-import BrowseProjects from 'components/browse-projects'
 import OpenTasks from 'components/open-tasks'
 import ProjectPage from 'components/project-page'
 import SearchPage from 'components/search-page'
@@ -31,13 +30,13 @@ export default class AppComponent extends Component {
         <div className='App'>
           <Menu />
           <Switch location={location}>
-            <Route exact path='/' component={Home}/>
+            <Route exact path='/home' component={Home}/>
             <Route path='/search' component={SearchPage}/>
-            <Route path='/browse-projects' component={BrowseProjects}/>
+            <Route path='/browse-projects' component={SearchPage}/>
             <Route path='/open-tasks' component={OpenTasks}/>
             <Route path='/privacy-policy' component={PrivacyPolicy}/>
             <Route path='/projects/:repoID' component={ProjectPage}/>
-            <Redirect to='/' />
+            <Redirect to='/home' />
           </Switch>
           <Footer />
         </div>
