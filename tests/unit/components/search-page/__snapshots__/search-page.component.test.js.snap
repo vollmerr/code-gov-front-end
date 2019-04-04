@@ -5,7 +5,7 @@ exports[`components - SearchPage render should render correctly 1`] = `
   className="search-results-content"
 >
   <Connect(SiteBanner)
-    title="Search Results"
+    title="Browse Projects"
   />
   <Breadcrumbs
     crumbs={
@@ -15,7 +15,7 @@ exports[`components - SearchPage render should render correctly 1`] = `
           "to": "/",
         },
         Object {
-          "text": "Search Results",
+          "text": "Browse Projects",
         },
       ]
     }
@@ -63,7 +63,7 @@ exports[`components - SearchPage render should render correctly 1`] = `
               "languages",
             ],
             Array [
-              "Federal Agency",
+              "State Agency",
               "agencies",
             ],
             Array [
@@ -136,4 +136,4 @@ exports[`components - SearchPage render should render correctly 1`] = `
     </div>
   </div>
 </div>
-`
+`;

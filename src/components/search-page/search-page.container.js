@@ -124,11 +124,6 @@ export const mapStateToProps = ({ filters, searchParams, searchResults, selected
 
     const sortOptions = [
       {
-        label: 'Best Match',
-        value: 'best_match',
-        selected: selectedSorting === 'best_match'
-      },
-      {
         label: 'Data Quality',
         value: 'data_quality',
         selected: selectedSorting === 'data_quality'

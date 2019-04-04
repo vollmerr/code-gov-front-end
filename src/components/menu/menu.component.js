@@ -88,7 +88,7 @@ export default class Menu extends Component {
 
   render() {
 
-    const { color, onHomePage, siteTitle, toggleSearchDropdown } = this.props
+    const { onHomePage, siteTitle, toggleSearchDropdown } = this.props
 
     let navClassName = 'main menu-background'
     if (this.state.expanded) navClassName += ' expanded'

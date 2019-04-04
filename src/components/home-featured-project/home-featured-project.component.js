@@ -4,7 +4,7 @@ import CustomLink from 'components/custom-link'
 export default class HomeFeaturedProject extends Component {
 
   render() {
-    const { image, alt, short_name, verbose_name, author, description, links } = this.props.project;
+    const { image, alt, short_name, description, links } = this.props.project;
 
     return (
       <div className="block featured-project">
@@ -20,11 +20,16 @@ export default class HomeFeaturedProject extends Component {
             <div className="width-two-thirds">
               <p className="fp-description">{description}</p>
                 {links.map(link => {
-                  const Link = link.url.startsWith('http') ? 'a' : CustomLink;
+                  let Link = CustomLink
+                  let linkProps = { to: link.url }
+                  if (link.url.startsWith('http')) {
+                    Link = 'a'
+                    linkProps = { href: link.url }
+                  }
 
                   return (
                     <span key={link.url}>
-                      <Link to={link.url} href={link.url}>
+                      <Link {...linkProps}>
                         <button>{link.name}</button>
                       </Link>
                     </span>

@@ -4,59 +4,29 @@ exports[`containers - HomeFeaturedProjects mapStateToProps should return the cor
 Object {
   "featuredProjects": Array [
     Object {
-      "alt": "A network of pipes with a red, yellow and green valve and a meter gauge",
-      "author": "Environmental Protection Agency",
-      "description": "A python package designed to simulate and analyze resilience of water distribution networks.",
-      "image": "/assets/img/featured-projects/pipes4.png",
+      "alt": "Chat bubble Icon",
+      "description": "Connect and collaborate with California state leaders, industry partners and civic technologists building a new approach to government technology innovation.",
+      "image": "fa fa-comments",
       "links": Array [
         Object {
-          "name": "View Project",
-          "url": "/projects/doe_sandia_national_laboratories_snl_water_network_tool_for_resilience_v_1_0",
-        },
-        Object {
-          "name": "Go to Repo",
-          "url": "https://github.com/usepa/wntr",
+          "name": "Join the Community",
+          "url": "https://join.slack.com/t/codecagov/shared_invite/enQtNDU3MDY2NDUyMTk3LTkxMzEwYzU3MzdkNTE3ZGE0OGY4MjU5YzUzMTE5ODgwZjc3ZDE3MjlhMjQ3NTJkN2Y2NzFmZDk0NzZmNzgwYmU",
         },
       ],
-      "short_name": "WNTR",
-      "verbose_name": "Water Network Tool for Resilience",
+      "short_name": "Community",
     },
     Object {
-      "alt": "Cartoon truck navigating windy road with caution sign and wireless towers",
-      "author": "Department of Transportation",
+      "alt": "Certificate Icon",
       "description": "A real-time virtual data router that ingests and processes operational data from various connected devices including vehicles, infrastructure, and traffic management centers and distributes it to other devices and subscribing transportation management applications.",
-      "image": "/assets/img/featured-projects/smartcity4.png",
+      "image": "fa fa-certificate",
       "links": Array [
         Object {
-          "name": "View Project",
-          "url": "/projects/dot_fhwa_intelligent_transportation_systems_operational_data_environment_its_ode_",
-        },
-        Object {
-          "name": "Go to Repo",
-          "url": "https://github.com/usdot-jpo-ode/jpo-ode",
+          "name": "Get Training",
+          "url": "https://codecagov-playbook.readthedocs.io/en/latest/training/",
         },
       ],
-      "short_name": "ITS ODE",
-      "verbose_name": "Intelligent Transportation Systems Operational Data Environment",
-    },
-    Object {
-      "alt": "Cartoon hand pressing buttons connected to phone and laptop",
-      "author": "National Security Agency",
-      "description": "Enables security teams to integrate apps, workflows, and analytics tools that would otherwise need to be created from scratch.",
-      "image": "/assets/img/featured-projects/WALKOFF.png",
-      "links": Array [
-        Object {
-          "name": "View Project",
-          "url": "/projects/nsa_walkoff",
-        },
-        Object {
-          "name": "Go to Repo",
-          "url": "https://github.com/iadgov/WALKOFF",
-        },
-      ],
-      "short_name": "WALKOFF",
-      "verbose_name": "",
+      "short_name": "Training",
     },
   ],
 }
-`
+`;

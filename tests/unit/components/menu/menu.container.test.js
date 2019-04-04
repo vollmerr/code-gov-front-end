@@ -3,14 +3,7 @@ import { mapStateToProps, mapDispatchToProps } from 'components/menu/menu.contai
 
 jest.mock('actions/toggle-search-dropdown')
 
-const props = {
-  router: {
-    location: {
-      pathname: '/test-path',
-    },
-  },
-  searchDropdown: 'test-search-dropdown',
-}
+const props = {}
 
 const dispatch = jest.fn()
 
@@ -18,11 +11,6 @@ describe('containers - Menu', () => {
   describe('mapStateToProps', () => {
     it('should return the correct properties', () => {
       expect(mapStateToProps(props)).toMatchSnapshot()
-    })
-
-    it('should set the `color` to `dark` if on the home page', () => {
-      const router = { location: { pathname: PUBLIC_PATH } }
-      expect(mapStateToProps({ ...props, router }).color).toBe('dark')
     })
   })
 

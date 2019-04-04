@@ -7,85 +7,65 @@ exports[`components - HomeFeaturedProject should render correctly 1`] = `
   <div
     className="indented"
   >
+    <hr />
     <div
-      className="width-half"
+      className="width-third"
     >
-      <div
-        className="featured-project-info"
+      <h2
+        className="fp-short-name"
       >
-        <div
-          className="fp-short-name"
-        >
-          short-name
-        </div>
-        <div
-          className="fp-verbose-name"
-        >
-          verbose-name
-        </div>
-        <div
-          className="fp-developed-by"
-        >
-          developed by 
-          test-auth
-        </div>
-        <p
-          className="fp-description"
-        >
-          test-desc
-        </p>
-        <div
-          className="buttons"
-        >
-          <span
-            key="http://test-url"
-          >
-            <a
-              href="http://test-url"
-            >
-              <button
-                className="alt"
-              >
-                http-1
-              </button>
-            </a>
-          </span>
-          <span
-            key="/other-url"
-          >
-            <Connect(CustomLinkComponent)
-              to="/other-url"
-            >
-              <button
-                className="alt"
-              >
-                other-1
-              </button>
-            </Connect(CustomLinkComponent)>
-          </span>
-          <span
-            key="https://test-url-2"
-          >
-            <a
-              href="https://test-url-2"
-            >
-              <button
-                className="alt"
-              >
-                http-2
-              </button>
-            </a>
-          </span>
-        </div>
+        short-name
+      </h2>
+      <div
+        align="center"
+      >
+        <i
+          alt="test-alt"
+          className="test-image"
+        />
       </div>
     </div>
     <div
-      className="width-half"
+      className="width-two-thirds"
     >
-      <img
-        alt="test-alt"
-        src="test-image"
-      />
+      <p
+        className="fp-description"
+      >
+        test-desc
+      </p>
+      <span
+        key="http://test-url"
+      >
+        <a
+          href="http://test-url"
+        >
+          <button>
+            http-1
+          </button>
+        </a>
+      </span>
+      <span
+        key="/other-url"
+      >
+        <Connect(CustomLinkComponent)
+          to="/other-url"
+        >
+          <button>
+            other-1
+          </button>
+        </Connect(CustomLinkComponent)>
+      </span>
+      <span
+        key="https://test-url-2"
+      >
+        <a
+          href="https://test-url-2"
+        >
+          <button>
+            http-2
+          </button>
+        </a>
+      </span>
     </div>
   </div>
 </div>

@@ -5,13 +5,7 @@ exports[`components - Menu - SearchBoxDropdown render should render correctly 1`
   className="search-box show-w-gt-800 active"
 >
   <div
-    style={
-      Object {
-        "marginLeft": "auto",
-        "position": "relative",
-        "width": "calc(36rem + 42px)",
-      }
-    }
+    className="search-box-container"
   >
     <a
       className="close-search-box-button"
@@ -31,4 +25,4 @@ exports[`components - Menu - SearchBoxDropdown render should render correctly 1`
     />
   </div>
 </div>
-`
+`;

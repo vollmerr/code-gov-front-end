@@ -30,7 +30,6 @@ exports[`components - PrivacyPolicy render should render correctly 1`] = `
     <br />
     <br />
     <div
-      className="width-three-quarters"
       dangerouslySetInnerHTML={
         Object {
           "__html": "test-privacy-policy",
@@ -39,4 +38,4 @@ exports[`components - PrivacyPolicy render should render correctly 1`] = `
     />
   </div>
 </div>
-`
+`;

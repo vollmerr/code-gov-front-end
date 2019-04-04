@@ -5,7 +5,7 @@ import CustomLink from 'components/custom-link'
 import PrimaryMenuOption from 'components/menu/subcomponents/primary-menu-option'
 
 const props = {
-  menuOption: { name: 'option-name' },
+  menuOption: { name: 'option-name', url: 'test-url' },
   onClick: jest.fn(),
 }
 
@@ -25,7 +25,7 @@ describe('components - Menu - PrimaryMenuOption', () => {
     expect(props.onClick).toBeCalledWith(props.menuOption, event)
   })
 
-  it('should render a `CustomLink` if passed a url', () => {
+  it('should render a `CustomLink` if passed a url that starts with `/`', () => {
     wrapper.setProps({ menuOption: { ...props.menuOption, url: '/test-url' } })
     expect(wrapper.find(CustomLink).length).toBe(1)
   })

@@ -11,7 +11,7 @@ export const mapDispatchToProps = dispatch => {
     onSubmit: query => {
       dispatch(updateSearchParams({
         page: 1,
-        size: 10,
+        size: 1000,
         query
       }))
       if (getSection() !== 'search') {

@@ -3,7 +3,8 @@
 exports[`components - Menu - PrimaryMenuOption should render correctly 1`] = `
 <a
   aria-haspopup="true"
-  href="javascript:void(0);"
+  className="nav-buttons"
+  href="test-url"
   onClick={[Function]}
   role="menuitem"
   tabIndex="0"

@@ -155,6 +155,6 @@ Object {
       "value": "last_updated",
     },
   ],
-  "total": 0,
+  "total": 2,
 }
-`
+`;
