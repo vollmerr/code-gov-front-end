@@ -2,7 +2,7 @@ export default {
   agencies: null,
   browseParams: {
     page: 1,
-    size: 10,
+    size: 1000,
     sort: 'data_quality',
     filters: []
   },
@@ -13,7 +13,8 @@ export default {
   searchParams: {
     page: 1,
     query: '',
-    size: 10,
+    size: 1000,
+    pageSize: 10,
     sort: 'best_match',
     filters: []
   },

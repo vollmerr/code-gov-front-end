@@ -61,7 +61,7 @@ exports[`components - BrowseProjects render should render correctly 1`] = `
               "languages",
             ],
             Array [
-              "Federal Agency",
+              "State Agency",
               "agencies",
             ],
             Array [
@@ -134,4 +134,4 @@ exports[`components - BrowseProjects render should render correctly 1`] = `
     </div>
   </div>
 </div>
-`
+`;

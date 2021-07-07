@@ -13,18 +13,10 @@ export default class HomeFeaturedProjects extends Component {
  
   render() {
     return (
-      <section className="featured-projects block block--white">
-        <div id="featured-projects-title">
-          <div className="indented">
-            <h2>Featured Projects</h2>
-          </div>
-        </div>
-        <div>
+      <section className="featured-projects">
           {this.props.featuredProjects && this.props.featuredProjects.map((project, index) => {
             return <HomeFeaturedProject index={index} key={project.short_name} project={project}/>
           })}
-        </div>
-
       </section>
     )
   }

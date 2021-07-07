@@ -19,7 +19,6 @@ export const mapStateToProps = ({ browseParams, browseResults, filters }) => {
     accumulator[key] = getFilterValuesFromParamsByCategory(browseParams, key)
     return accumulator
   }, {})
-  //console.log("selections:", selections)
 
   const selectedSorting = browseParams.sort
   const selectedPage = browseParams.page
@@ -51,8 +50,8 @@ export const mapStateToProps = ({ browseParams, browseResults, filters }) => {
     },
     {
       label: 'Last Updated',
-      value: 'last_updated',
-      selected: selectedSorting === 'last_updated'
+      value: 'last_update',
+      selected: selectedSorting === 'last_update'
     }
   ]
 
@@ -71,7 +70,6 @@ export const mapStateToProps = ({ browseParams, browseResults, filters }) => {
     total
   }
 
-  //console.log("browse-projects's container passing following to component:", result)
   return result
 }
 

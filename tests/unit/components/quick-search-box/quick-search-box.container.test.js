@@ -1,12 +1,10 @@
 import { push } from 'connected-react-router'
 
 import updateSearchParams from 'actions/update-search-params'
-import { getSection } from 'utils/url-parsing'
 import { mapStateToProps, mapDispatchToProps } from 'components/quick-search-box/quick-search-box.container'
 
 jest.mock('connected-react-router')
 jest.mock('actions/update-search-params')
-jest.mock('utils/url-parsing')
 
 const props = {
   searchParams: {
@@ -32,14 +30,8 @@ describe('containers - QuickSearchBox', () => {
       it('should dispatch the correct actions', () => {
         mapDispatchToProps(dispatch).onSubmit('test-query')
         expect(dispatch).toBeCalledTimes(2)
-        expect(updateSearchParams).toBeCalledWith({ page: 1, size: 10, sort: 'best_match', query: 'test-query' })
-        expect(push).toBeCalledWith('/search?page=1&query=test-query&size=10&sort=best_match')
-      })
-
-      it('should not dispatch the `push` action if on the `search` section', () => {
-        getSection.mockImplementation(() => 'search')
-        mapDispatchToProps(dispatch).onSubmit('test-query')
-        expect(push).not.toBeCalled()
+        expect(updateSearchParams).toBeCalledWith({ page: 1, size: 1000, sort: 'best_match', query: 'test-query' })
+        expect(push).toBeCalledWith('/search?page=1&query=test-query&size=1000&sort=best_match')
       })
     })
   })

@@ -4,7 +4,7 @@ import React, { Component, Fragment } from 'react'
 import MobileMenu from 'components/mobile-menu'
 
 export default function MobileMenuControl ({ color, displayMobileMenu, toggleMobileMenu }) {
-  let className = 'show-w-lte-800'
+  let className = 'show-w-lte-800 mobile-menu-button'
   if (color === 'dark') {
     className += ' dark'
   }

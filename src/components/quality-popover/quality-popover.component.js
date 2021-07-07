@@ -7,14 +7,21 @@ export default class QualityPopover extends Component {
     super(props)
     this.state = { activated: false }
     this.icon = React.createRef()
+    this.mounted = false
   }
 
   componentDidMount() {
+    this.mounted = true
+
     document.addEventListener('click', event => {
-      if (this.icon.current !== event.target) {
+      if (this.icon.current !== event.target && this.mounted) {
         this.setState({ activated: false })
       }
     })
+  }
+
+  componentWillUnmount() {
+    this.mounted = false
   }
 
   onClick() {

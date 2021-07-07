@@ -3,7 +3,7 @@
 exports[`components - MobileMenuControl should render correctly 1`] = `
 <Fragment>
   <mobile-menu-button
-    class="show-w-lte-800"
+    class="show-w-lte-800 mobile-menu-button"
     onClick={[MockFunction]}
     open={false}
   />
@@ -11,4 +11,4 @@ exports[`components - MobileMenuControl should render correctly 1`] = `
     open={false}
   />
 </Fragment>
-`
+`;

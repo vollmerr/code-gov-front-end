@@ -5,7 +5,7 @@
     color: $color-gray-dark;
   }
   a {
-    color: $brand-teal-dark;
+    color: black;
     text-decoration: underline;
 
     &:hover {
@@ -21,7 +21,7 @@
 
 
   .repo-container {
-
+    min-height: 322px;
     code {
       background-color: $brand-blue-gray;
       border-radius: 3px;
@@ -57,7 +57,7 @@
     width: 100%;
     border-bottom: 1px lightgray solid;
 
-    li,span.li {
+    li, span.li {
       display: inline;
       color: $brand-blue-dark;
       margin-right: 2em;
@@ -97,7 +97,7 @@
 
   .icon {
     color: $brand-blue;
-    margin-top: 0pxm;
+    margin-top: 0px;
     margin-right: 0px;
     margin-bottom: .7rem;
     margin-left: 0px;

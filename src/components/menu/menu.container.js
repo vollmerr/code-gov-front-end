@@ -1,21 +1,16 @@
 /* global PUBLIC_PATH */
 
 import { withRouter } from 'react-router-dom'
-import { connect } from 'react-redux';
-import get from 'lodash.get'
+import { connect } from 'react-redux'
 import { getConfigValue } from 'utils/other'
 import MenuComponent from './menu.component'
 import toggleSearchDropdown from 'actions/toggle-search-dropdown'
 
-export const mapStateToProps = ({ router, searchDropdown }) => {
-  const onHomePage = router.location.pathname === PUBLIC_PATH
+export const mapStateToProps = () => {
   return {
-    color: onHomePage ? 'dark' : 'white',
-    logoDark: getConfigValue('content.header.logos.dark'),
     logoLight: getConfigValue('content.header.logos.light'),
     menu: getConfigValue('content.header.menu'),
-    onHomePage,
-    searchDropdown,
+    officialBanner: getConfigValue('content.header.official_banner'),
     siteTitle: getConfigValue('title'),
   }
 }

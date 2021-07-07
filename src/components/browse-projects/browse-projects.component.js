@@ -89,7 +89,7 @@ export default class BrowseProjects extends React.Component {
               boxes={this.props.boxes}
               config={[
                 ['Language', 'languages'],
-                ['Federal Agency', 'agencies'],
+                ['State Agency', 'agencies'],
                 ['Licenses', 'licenses'],
                 ['Usage Types', 'usageTypes']
                 ]}

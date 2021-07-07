@@ -7,16 +7,14 @@ import { eventMap as dEventMap } from 'mocks/document'
 import Menu from 'components/menu/menu.component'
 
 const props = {
-  color: 'white',
-  onHomePage: false,
-  siteTitle: 'test-title',
-  toggleSearchDropdown: jest.fn(),
-  logoDark: 'logo-src-dark',
   logoLight: 'logo-src-light',
   menu: [
     { name: 'menu-opt-1', expanded: false, links: [{ id: 'menu-link-1' }] },
     { name: 'menu-opt-2', expanded: true , links: [{ id: 'menu-link-2' }]},
   ],
+  officialBanner: 'official-banner',
+  siteTitle: 'test-title',
+  toggleSearchDropdown: jest.fn(),
 }
 
 let wrapper
@@ -78,14 +76,6 @@ describe('components - Menu', () => {
       // BUG: not set based off current option being expanded, based off outdated state
       // Remove (all references to expanded in state)? - doesnt look like even needed / adding `expanded` class to nav does nothing
     })
-  })
-
-  xdescribe('expanded', () => {
-    // Refactor? - not used anywhere - looks like should be used in onClickMenuOption
-  })
-
-  xdescribe('menus', () => {
-    // Refactor? - not used anywhere - looks like should be used in place of `menubar` items
   })
 
   describe('collapse', () => {

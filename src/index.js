@@ -9,10 +9,14 @@ import '../styles/_main.scss'
 import syncers from 'syncers'
 import syncStore from 'sync-store'
 
+if (process.env.NODE_ENV === 'production') {
+  console.log = () => {}
+  console.warn = () => {}
+}
+
 const store = buildStore()
 
 syncStore(store, syncers)
-
 
 ReactDOM.render(
   <Provider store={store}>

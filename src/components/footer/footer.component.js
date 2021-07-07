@@ -5,48 +5,43 @@ import { map, startsWith } from '@code.gov/cautious'
 
 export default class Footer extends Component {
   render() {
+    const { links, logo } = this.props;
+    const copyright = `${new Date().getFullYear()} Code California`;
+
     return (
-      <footer className={this.props.color} role="contentinfo">
+      <div className="footer" role="contentinfo">
         <div className="footer-content">
-          <div className="footer-part links" data-test="links">
-            <ul>
-              {map(this.props.links, link => {
-                if (startsWith(link.url, 'http') || startsWith(link.url, 'mailto')) {
-                  return (
-                    <li key={link.name}>
-                      <a className="link" href={link.url} target="_blank" key={link.name}>
-                        <span>{link.name}</span>
-                      </a>
-                    </li>
-                  )
-                } else {
-                  return (
-                    <li key={link.name}>
-                      <CustomLink to={link.url} className="link">
-                        <span>{link.name}</span>
-                      </CustomLink>
-                    </li>
-                  )
-                }
-              })}
-            </ul>
-          </div>
-          <div className="footer-part logos" data-test="logos">
-            <ul>
-              {map(this.props.logos, logo => {
+          <img className="foot-img" src={logo.image} alt={logo.alt} />
+
+          <div className="separator" />
+
+          <div>
+            <ul className="social-links">
+              {map(links, link => {
+                const icon = `fa fa-${link.icon}`;
+
                 return (
-                  <li key={logo.name}>
-                    <a href={logo.url} target="_blank" rel="noopener">
-                      <img src={logo.image} alt={logo.name}/>
-                      <span>{logo.name}</span>
+                  <li key={link.name}>
+                    <a
+                      href={link.url}
+                      aria-label={link.name}
+                      className="icon-link"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      <i className={icon} aria-hidden="true" />
                     </a>
                   </li>
                 )
               })}
             </ul>
           </div>
+
+          <CustomLink to="/Privacy-Policy" className="icon-link" >Privacy Policy</CustomLink>
+
+          <div className="icon-link">{copyright}</div>
         </div>
-      </footer>
+      </div>
     )
   }
 }

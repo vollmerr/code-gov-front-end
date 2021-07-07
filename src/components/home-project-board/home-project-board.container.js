@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import { getConfigValue } from 'utils/other'
-import HomeFeaturedProjects from './home-press.component'
+import HomeProjectBoard from './home-project-board.component'
 
-export const mapStateToProps = () => {
+const mapStateToProps = () => {
   return {
     backgroundImage: getConfigValue('images.background'),
     quote: getConfigValue('content.home.press.quote') || '',
@@ -12,4 +12,4 @@ export const mapStateToProps = () => {
   }
 }
 
-export default connect(mapStateToProps)(HomeFeaturedProjects)
+export default connect(mapStateToProps)(HomeProjectBoard)

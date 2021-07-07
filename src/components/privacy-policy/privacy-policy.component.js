@@ -20,7 +20,7 @@ export default class PrivacyPolicy extends React.Component {
         <div className="indented markdown privacy-content">
           <br/>
           <br/>
-          <div className="width-three-quarters" dangerouslySetInnerHTML={{ __html: this.props.privacyPolicy }}></div>
+          <div dangerouslySetInnerHTML={{ __html: this.props.privacyPolicy }}></div>
         </div>
       </div>
     )

@@ -56,12 +56,12 @@ describe('containers - Menu - SearchBoxDropdown', () => {
 
       describe('section is not `search`', () => {
         it('should dispatch the `updateSearchParams` action with the correct params', () => {
-          const expected = { page: 1, query: 'test-query', size: 10, sort: 'best_match' }
+          const expected = { page: 1, query: 'test-query', size: 1000, sort: 'best_match' }
           testOnSubmit({ section: 'not-search', query: 'test-query', action: updateSearchParams, expected })
         })
 
         it('should dispatch the action to `push` to the correct page', () => {
-          const expected = `/search?page=1&query=test-query&size=10&sort=best_match`
+          const expected = `/search?page=1&query=test-query&size=1000&sort=best_match`
           testOnSubmit({ section: 'not-search', query: 'test-query', action: push, expected })
         })
       })

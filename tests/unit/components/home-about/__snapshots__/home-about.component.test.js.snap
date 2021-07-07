@@ -2,21 +2,10 @@
 
 exports[`components - HomeAbout should render correctly 1`] = `
 <section
+  aria-label="Main about section on landing page"
   className="about"
   id="about"
 >
-  <header>
-    <h2>
-      Our Mission
-    </h2>
-    <p
-      className="indented"
-    >
-      test-mission
-    </p>
-  </header>
-  <br />
-  <hr />
   <ul
     className="indented about-actions"
   >
@@ -27,16 +16,19 @@ exports[`components - HomeAbout should render correctly 1`] = `
       <Connect(CustomLinkComponent)
         to="l1"
       >
-        <img
-          alt="About Icon"
-          src="i1"
-        />
-        <h3>
+        <h2>
           t1
-        </h3>
+        </h2>
+        <i
+          alt="About Icon"
+          className="i1"
+        />
         <p>
           d1
         </p>
+        <button
+          className="about-button"
+        />
       </Connect(CustomLinkComponent)>
     </li>
     <li
@@ -46,18 +38,21 @@ exports[`components - HomeAbout should render correctly 1`] = `
       <Connect(CustomLinkComponent)
         to="l2"
       >
-        <img
-          alt="About Icon"
-          src="i2"
-        />
-        <h3>
+        <h2>
           t2
-        </h3>
+        </h2>
+        <i
+          alt="About Icon"
+          className="i2"
+        />
         <p>
           d2
         </p>
+        <button
+          className="about-button"
+        />
       </Connect(CustomLinkComponent)>
     </li>
   </ul>
 </section>
-`
+`;

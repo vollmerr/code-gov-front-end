@@ -72,3 +72,7 @@ typings/
 
 # code.gov plugins
 /src/components/plugins
+
+# sonar qube
+test-report.xml
+.scannerwork 

@@ -4,7 +4,7 @@ exports[`containers - HomeBannerSearchBox mapStateToProps should return the corr
 Object {
   "placeholder": "e.g. JavaScript, NASA, web standards",
   "query": "test-query",
-  "searchDescriptionText": "Search thousands of Federal Government projects",
+  "searchDescriptionText": "Search thousands of California State projects",
   "searchDescriptionTextMobile": "Search projects",
 }
-`
+`;

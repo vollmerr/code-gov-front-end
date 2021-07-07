@@ -70,12 +70,10 @@ export default class ProjectPage extends Component {
     const text = getLicenseName(this.props.repo)
     if (text) {
       return (
-        <span>
-          <li>
-            <i className="icon icon-certificate"></i>
-            <span>{text}</span>
-          </li>
-        </span>
+        <li>
+          <i className="icon icon-certificate"></i>
+          <span>{text}</span>
+        </li>
       )
     }
   }
@@ -84,12 +82,10 @@ export default class ProjectPage extends Component {
     const laborHours = getLaborHours(this.props.repo)
     if (laborHours) {
       return (
-        <span>
-          <li>
-            <i className="icon icon-hourglass-end"></i>
-            {`${laborHours} hours`}
-          </li>
-        </span>
+        <li>
+          <i className="icon icon-hourglass-end"></i>
+          {`${laborHours} hours`}
+        </li>
       )
     }
   }
@@ -100,18 +96,16 @@ export default class ProjectPage extends Component {
       const count = langs.length
       const lastIndex = count - 1
       return (
-        <span>
-          <li>
-            <i className="icon icon-code"></i>
-            {map(langs, (lang, i) => {
-              return (
-                <span className={'language' + (i === lastIndex && ' last')} key={lang}>
-                  {lang}<span className="comma">, </span>
-                </span>
-              )
-            })}
-          </li>
-        </span>
+        <li>
+          <i className="icon icon-code"></i>
+          {map(langs, (lang, i) => {
+            return (
+              <span className={'language' + (i === lastIndex && ' last')} key={lang}>
+                {lang}<span className="comma">, </span>
+              </span>
+            )
+          })}
+        </li>
       )
     }
   }
@@ -120,14 +114,12 @@ export default class ProjectPage extends Component {
     const email = parseEmail(this.props.repo)
     if (email) {
       return (
-        <span>
-          <li>
-            <i className="icon icon-mail"></i>
-            <a href={`mailto:${email}?Subject=Contribution%20Inquiry`} target="_top">
-              {email}
-            </a>
-          </li>
-        </span>
+        <li>
+          <i className="icon icon-mail"></i>
+          <a href={`mailto:${email}?Subject=Contribution%20Inquiry`} target="_top">
+            {email}
+          </a>
+        </li>
       )
     }
   }

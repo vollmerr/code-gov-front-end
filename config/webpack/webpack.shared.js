@@ -13,6 +13,7 @@ const { copyOverPluginIfNecessary } = require('./webpack.utils');
 
 const rootDir = dirname(dirname(__dirname))
 const nodeModulesDir = join(rootDir, 'node_modules')
+const isProd = process.env.NODE_ENV == 'production'
 
 console.log('process.env.CODE_GOV_API_BASE:', process.env.CODE_GOV_API_BASE)
 console.log('process.env.CODE_GOV_API_KEY:', process.env.CODE_GOV_API_KEY)
@@ -207,11 +208,11 @@ module.exports = {
       'PUBLIC_PATH': JSON.stringify(PUBLIC_PATH),
       'SITE_CONFIG': JSON.stringify(SITE_CONFIG)
     }),
-    new EnvironmentPlugin([
-      'CODE_GOV_API_BASE',
-      'CODE_GOV_API_KEY',
-      'CODE_GOV_TASKS_URL'
-    ]),
+    new EnvironmentPlugin({
+      'CODE_GOV_API_BASE': isProd ? SITE_CONFIG.api.base : 'http://localhost:6001/api/',
+      // 'CODE_GOV_API_KEY',
+      'CODE_GOV_TASKS_URL': isProd ? SITE_CONFIG.api.base : 'http://localhost:6001/api/open-tasks',
+    }),
     new CleanWebpackPlugin([OUTPUT_PATH], { root: rootDir }),
     new CopyWebpackPlugin(patterns),
     new FaviconsWebpackPlugin('./assets/img/favicon.png'),

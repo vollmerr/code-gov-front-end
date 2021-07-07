@@ -5,11 +5,9 @@ import hideMobileMenu from 'actions/hide-mobile-menu'
 import showMobileMenu from 'actions/show-mobile-menu'
 import toggleMobileMenu from 'actions/toggle-mobile-menu'
 
-export const mapStateToProps = ({ displayMobileMenu, router }) => {
-  const onHomePage = router.location.pathname === PUBLIC_PATH
-  const color = onHomePage ? 'white' : 'dark'
+export const mapStateToProps = ({ displayMobileMenu }) => {
   return {
-    color,
+    color: 'white',
     displayMobileMenu
   }
 }

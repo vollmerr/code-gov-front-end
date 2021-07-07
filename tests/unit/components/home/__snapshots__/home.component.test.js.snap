@@ -5,6 +5,8 @@ exports[`components - Home render should render correctly 1`] = `
   <Connect(HomeBanner) />
   <Connect(HomeAbout) />
   <Connect(HomeFeaturedProjects) />
-  <Connect(HomePressComponent) />
+  <Connect(HomeProjectBoardComponent) />
+  <HomePartners />
+  <HomeConnect />
 </Fragment>
-`
+`;

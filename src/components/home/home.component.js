@@ -2,7 +2,9 @@ import React, { Fragment } from 'react'
 import HomeAbout from 'components/home-about'
 import HomeBanner from 'components/home-banner'
 import HomeFeaturedProjects from 'components/home-featured-projects'
-import HomePress from 'components/home-press'
+import HomeProjectBoard from 'components/home-project-board'
+import HomePartners from 'components/home-partners'
+import HomeConnect from 'components/home-connect'
 import { refreshView } from 'utils/other'
 
 export default class HomeComponent extends React.Component {
@@ -22,7 +24,9 @@ export default class HomeComponent extends React.Component {
         <HomeBanner/>
         <HomeAbout/>
         <HomeFeaturedProjects/>
-        <HomePress/>
+        <HomeProjectBoard/>
+        <HomePartners />
+        <HomeConnect />
       </Fragment>
     )
   }

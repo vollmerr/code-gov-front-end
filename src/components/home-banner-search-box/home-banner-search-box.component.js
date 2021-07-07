@@ -39,7 +39,7 @@ export default class HomeBannerSearchBoxComponent extends Component {
       const suggestions = map(terms, term => {
         return {
           text: term,
-          to: `/search?query=${term}&page=1&size=10`
+          to: `/search?query=${term}&page=1&size=1000`
         }
       })
       if (this.mounted) {

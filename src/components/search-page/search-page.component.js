@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { refreshView, scrollToTopOfResults } from 'utils/other'
 import Breadcrumbs from 'components/breadcrumbs'
 import FilterBoxes from 'components/filter-boxes'
@@ -9,7 +9,7 @@ import RepoCard from 'components/repo-card'
 import QuickSearchBox from 'components/quick-search-box'
 import SortSection from 'components/sort-section'
 import SiteBanner from 'components/site-banner'
-import { length, some } from '@code.gov/cautious'
+import { Redirect } from 'react-router'
 
 export default class SearchPage extends React.Component {
 
@@ -29,27 +29,28 @@ export default class SearchPage extends React.Component {
 
   get repoCounter() {
     let textContent
+    const total = this.props.total
+    const query = this.props.query
+    const forQuery = query ? `for "${query}"` : ''
     if (this.props.filteredResults) {
-      const total = this.props.total;
-      const query = this.props.query
       if (total === 0) {
-        textContent = `We found no Repositories for "${query}"`
+        textContent = `We found no Repositories ${forQuery}`
       } else if (total === 1) {
-        textContent = `We found 1 Repository for "${query}"`
+        textContent = `We found 1 Repository ${forQuery}`
       } else if (total >= 2) {
-        textContent = `We found ${total} Repositories for "${query}"`
-      } else {
+        textContent = `We found ${total} Repositories ${forQuery}`
+      } 
+      else {
         textContent = 'Loading Repositories'
       }
     } else {
-      textContent = 'Loading Repositories'
+      textContent = `No Repositories Found ${forQuery}`
     }
     return <h3 className="repos-count width-three-quarters">{textContent}</h3>
   }
 
   get reposContainer() {
     const filteredResults = this.props.filteredResults
-    console.log("starting reposContainers with filteredResults:", filteredResults)
 
     if (filteredResults) {
       return (
@@ -72,10 +73,10 @@ export default class SearchPage extends React.Component {
     const numPages = Math.ceil(this.props.total / this.props.selectedPageSize)
     return (
       <div className="search-results-content">
-        <SiteBanner title='Search Results' />
+        <SiteBanner title='Browse Projects' />
         <Breadcrumbs crumbs={[
           { text: 'Home', to: '/' },
-          { text: 'Search Results' }
+          { text: 'Browse Projects' }
         ]}/>
         <div className="search-results-header">
           <div className="indented">
@@ -93,9 +94,8 @@ export default class SearchPage extends React.Component {
               boxes={this.props.boxes}
               config={[
                 ['Language', 'languages'],
-                ['Federal Agency', 'agencies'],
+                ['State Agency', 'agencies'],
                 ['Licenses', 'licenses'],
-                ['Usage Types', 'usageTypes']
                 ]}
               onFilterBoxChange={::this.onFilterBoxChange}
             />
